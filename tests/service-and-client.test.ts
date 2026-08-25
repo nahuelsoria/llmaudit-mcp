@@ -8,7 +8,7 @@ import { schema as startSchema } from "../src/tools/start-visibility-check";
 import type { AuditResponse, FanoutMap } from "../src/lib/visibility-mapper";
 
 function fixture<T>(name: string): T {
-  return JSON.parse(readFileSync(resolve(process.cwd(), "..", "fixtures", name), "utf8")) as T;
+  return JSON.parse(readFileSync(resolve(process.cwd(), "fixtures", name), "utf8")) as T;
 }
 
 const input = {

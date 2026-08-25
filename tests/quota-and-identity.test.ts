@@ -8,7 +8,7 @@ import { VisibilityService } from "../src/lib/visibility-service";
 import type { AuditResponse, FanoutMap } from "../src/lib/visibility-mapper";
 
 function fixture<T>(name: string): T {
-  return JSON.parse(readFileSync(resolve(process.cwd(), "..", "fixtures", name), "utf8")) as T;
+  return JSON.parse(readFileSync(resolve(process.cwd(), "fixtures", name), "utf8")) as T;
 }
 
 const input = { brand: "Picaday", website: "picaday.com.ar", category: "app de diario fotografico" };

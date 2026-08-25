@@ -10,7 +10,7 @@ const cases = {
 } as const;
 
 function fixture<T>(name: string): T {
-  return JSON.parse(readFileSync(resolve(process.cwd(), "..", "fixtures", name), "utf8")) as T;
+  return JSON.parse(readFileSync(resolve(process.cwd(), "fixtures", name), "utf8")) as T;
 }
 
 function mapped(name: keyof typeof cases) {
