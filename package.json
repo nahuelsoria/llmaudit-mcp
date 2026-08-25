@@ -1,0 +1,24 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "description": "MCP server for measured brand visibility in AI answers",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "xmcp build",
+    "dev": "xmcp dev",
+    "start": "node dist/http.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "xmcp": "^1.1.1",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.3.0",
+    "@xmcp-dev/compiler": "^1.1.1",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  }
+}
