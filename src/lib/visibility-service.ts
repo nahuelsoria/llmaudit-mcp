@@ -5,6 +5,27 @@ import { mapVisibilityResult, type AuditResponse, type FanoutMap, type Visibilit
 
 export const FREE_QUOTA_WINDOW_MS = 30 * 24 * 60 * 60 * 1000;
 
+// Techo propio del canal MCP, en corridas y no en dolares porque este servidor
+// no ve el gasto real: lo ve prod. A ~USD 0,15 la corrida cara, el default
+// acota el canal a unos USD 30 por mes.
+//
+// Existe porque la cuota por dominio sola no alcanza: acota lo que gasta UNA
+// marca, no lo que gasta un loop de agente enumerando dominios distintos. Y el
+// tope que ya tiene prod (REPORT_MONTHLY_BUDGET_USD) es compartido con el
+// funnel web, asi que sin esto una tanda por MCP se come el presupuesto de la
+// gente que entra por la pagina.
+export const DEFAULT_MONTHLY_RUN_LIMIT = 200;
+
+function monthlyRunLimit(): number {
+  const raw = Number(process.env.MCP_MONTHLY_RUN_LIMIT);
+  return Number.isFinite(raw) && raw >= 0 ? Math.floor(raw) : DEFAULT_MONTHLY_RUN_LIMIT;
+}
+
+function startOfMonth(now: number): number {
+  const d = new Date(now);
+  return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1);
+}
+
 export type StartVisibilityInput = {
   brand: string;
   website: string;
@@ -25,6 +46,12 @@ export type QuotaBlockedResult = {
   status: "quota_reached";
   domain: string;
   measuredAt: string;
+  message: string;
+  upgrade: { fullReportUsd: number; lifetimeUsd: number; url: string };
+};
+
+export type BudgetBlockedResult = {
+  status: "channel_budget_reached";
   message: string;
   upgrade: { fullReportUsd: number; lifetimeUsd: number; url: string };
 };
@@ -74,7 +101,7 @@ export class VisibilityService {
     this.clientId = options.clientId ?? "anon";
   }
 
-  async start(input: StartVisibilityInput): Promise<StartVisibilityResult | QuotaBlockedResult> {
+  async start(input: StartVisibilityInput): Promise<StartVisibilityResult | QuotaBlockedResult | BudgetBlockedResult> {
     const domain = normalizeDomain(input.website);
 
     // La cuota se chequea ANTES de llamar a /api/audit: un servidor MCP publico
@@ -90,6 +117,15 @@ export class VisibilityService {
         domain,
         measuredAt: new Date(previous.startedAt).toISOString(),
         message: `${domain} was already measured for free in the last 30 days. Re-measuring is a paid run.`,
+        upgrade: UPGRADE,
+      };
+    }
+
+    if (await this.overMonthlyLimit()) {
+      return {
+        status: "channel_budget_reached",
+        message:
+          "The free measurement channel is out of budget for this month. Paid runs are unaffected and it resets next month.",
         upgrade: UPGRADE,
       };
     }
@@ -125,6 +161,11 @@ export class VisibilityService {
       etaSeconds: 75,
       next: "Call get_visibility_check with this runId. Wait ~30s between polls.",
     };
+  }
+
+  private async overMonthlyLimit(): Promise<boolean> {
+    const limit = monthlyRunLimit();
+    return (await this.store.countSince(startOfMonth(this.now()))) >= limit;
   }
 
   async get(runId: string): Promise<GetVisibilityResult> {

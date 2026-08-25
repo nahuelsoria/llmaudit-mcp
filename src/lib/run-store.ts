@@ -15,6 +15,7 @@ export interface RunStore {
   // El corte llega absoluto y no como ventana: el reloj lo pone el servicio,
   // asi el store no tiene uno propio que se desincronice con el de arriba.
   findRecentByDomain(domain: string, since: number): Promise<RunRecord | null>;
+  countSince(since: number): Promise<number>;
   reserve(run: RunRecord): Promise<void>;
   attachAudit(runId: string, auditId: string, audit: unknown): Promise<void>;
   release(runId: string): Promise<void>;
@@ -43,6 +44,12 @@ export class InMemoryRunStore implements RunStore {
       if (run.domain === domain && run.startedAt >= since) return run;
     }
     return null;
+  }
+
+  async countSince(since: number): Promise<number> {
+    let total = 0;
+    for (const run of this.runs.values()) if (run.startedAt >= since) total += 1;
+    return total;
   }
 
   async reserve(run: RunRecord) {
@@ -81,6 +88,14 @@ export class SupabaseRunStore implements RunStore {
       .limit(1);
     const row = data?.[0];
     return row ? toRecord(row) : null;
+  }
+
+  async countSince(since: number): Promise<number> {
+    const { count } = await this.client
+      .from("mcp_runs")
+      .select("run_id", { count: "exact", head: true })
+      .gte("started_at", new Date(since).toISOString());
+    return count ?? 0;
   }
 
   async reserve(run: RunRecord) {

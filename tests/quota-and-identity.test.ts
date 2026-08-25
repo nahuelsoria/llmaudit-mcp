@@ -166,3 +166,42 @@ describe("errores que lee el agente que llama", () => {
     ).rejects.toThrow(/could not reach llmaudit/i);
   });
 });
+
+describe("techo mensual del canal MCP", () => {
+  afterEach(() => {
+    delete process.env.MCP_MONTHLY_RUN_LIMIT;
+  });
+
+  // La cuota por dominio acota lo que gasta UNA marca. Esto acota lo que gasta
+  // un loop enumerando dominios distintos, que es el caso caro de verdad.
+  it("frena antes de llamar a la API cuando se llego al techo", async () => {
+    process.env.MCP_MONTHLY_RUN_LIMIT = "2";
+    const store = new InMemoryRunStore();
+    const client = new FakeClient();
+    const now = () => Date.UTC(2026, 7, 20);
+    const svc = (id: string) => new VisibilityService(client, { store, now, newRunId: () => id });
+
+    await svc("r1").start({ ...input, website: "uno.com" });
+    await svc("r2").start({ ...input, website: "dos.com" });
+    const tercera = await svc("r3").start({ ...input, website: "tres.com" });
+
+    expect(tercera.status).toBe("channel_budget_reached");
+    expect(client.starts).toBe(2);
+  });
+
+  it("el techo cuenta desde el primer dia del mes, no las ultimas 30 corridas", async () => {
+    process.env.MCP_MONTHLY_RUN_LIMIT = "1";
+    const store = new InMemoryRunStore();
+    const client = new FakeClient();
+    const mesPasado = new VisibilityService(client, {
+      store,
+      now: () => Date.UTC(2026, 6, 20),
+      newRunId: () => "viejo",
+    });
+    await mesPasado.start({ ...input, website: "uno.com" });
+
+    const esteMes = new VisibilityService(client, { store, now: () => Date.UTC(2026, 7, 2), newRunId: () => "nuevo" });
+    const result = await esteMes.start({ ...input, website: "dos.com" });
+    expect(result.status).toBe("running");
+  });
+});
