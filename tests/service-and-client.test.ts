@@ -68,7 +68,12 @@ describe("schema y servicio", () => {
         competitors: input.competitors,
         location: input.location,
         promptLanguage: "es",
-        source: "mcp",
+        analytics: {
+          sessionId: "anon",
+          utmSource: "mcp",
+          utmMedium: "mcp",
+          utmCampaign: "mcp-visibility-check",
+        },
       },
     ]);
     expect(JSON.stringify(client.starts)).not.toContain("email");

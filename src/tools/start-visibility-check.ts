@@ -1,6 +1,8 @@
 import { z } from "zod";
 import { type InferSchema, type ToolMetadata } from "xmcp";
-import { visibilityService } from "../lib/visibility-service";
+import { headers } from "xmcp/headers";
+import { clientIdFromHeaders } from "../lib/client-identity";
+import { createVisibilityService } from "../lib/visibility-service";
 
 export const schema = {
   brand: z.string().min(2).max(80).describe("Brand name as customers write it"),
@@ -24,5 +26,5 @@ export const metadata: ToolMetadata = {
 };
 
 export default async function startVisibilityCheck(input: InferSchema<typeof schema>) {
-  return JSON.stringify(await visibilityService.start(input));
+  return JSON.stringify(await createVisibilityService(clientIdFromHeaders(headers())).start(input));
 }

@@ -63,7 +63,7 @@ export type VisibilityReadyResult = {
 
 const MAX_QUESTION_CHARS = 240;
 const MAX_COMPETITOR_CHARS = 80;
-const MAX_SAMPLE_QUESTIONS = 5;
+const MAX_SAMPLE_QUESTIONS = 3;
 const MAX_TOP_COMPETITORS = 5;
 const MAX_NAMED_INSTEAD = 5;
 
