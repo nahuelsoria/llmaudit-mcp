@@ -1,0 +1,376 @@
+{
+ "ok": true,
+ "map": {
+  "generatedAt": "2026-08-25T21:18:27.608Z",
+  "rows": [
+   {
+    "question": {
+     "family": "use_case",
+     "question": "¿Qué app puedo usar para hacer un diario fotográfico privado con una foto por día?"
+    },
+    "cells": [
+     {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "status": "competitor",
+      "rank": null,
+      "competitors": [
+       "Day One",
+       "Journey",
+       "Diaro",
+       "Penzu",
+       "Google Photos"
+      ],
+      "answer": "Para hacer un diario fotográfico privado con una foto por día, aquí tienes algunas aplicaciones recomendadas que cumplen con esa función:\n\n1. **Day One**  \n   - Plataforma: iOS, macOS, Android (beta)  \n   - Características: Es una de las apps de diario más populares. Permite añadir fotos, texto, etiquetas y ubicación. Puedes configurar la privacidad con contraseña o Face ID/Touch ID.  \n   - Ideal para: Usuarios que quieren un diario completo y seguro, con opción de añadir una foto diaria.\n\n2. **Journey**  \n   - Plataforma: iOS, Android, Windows, macOS, Web  \n   - Características: Permite añadir fotos, texto y entradas diarias. Tiene opciones de privacidad con contraseña y sincronización en la nube.  \n   - Ideal para: Usuarios que buscan una app multiplataforma con buena privacidad.\n\n3. **Diaro**  \n   - Plataforma: iOS, Android, Web  \n   - Características: Diario personal con fotos, etiquetas y organización por carpetas. Permite proteger con contraseña y exportar entradas.  \n   - Ideal para: Usuarios que quieren una app sencilla y segura para fotos diarias.\n\n4. **Penzu**  \n   - Plataforma: iOS, Android, Web  \n   - Características: Diario privado con cifrado, permite añadir fotos y texto. Tiene versión gratuita y premium con más funciones.  \n   - Ideal para: Usuarios que priorizan la privacidad y seguridad.\n\n5. **Google Photos (Álbum privado)**  \n   - Plataforma: iOS, Android, Web  \n   - Características: Aunque no es una app de diario, puedes crear un álbum privado con una foto por día y añadir descripciones.  \n   - Ideal para: Usuarios que prefieren una solución simple y ya usan Google Photos.\n\n---\n\n**Recomendación:** Si buscas una experiencia completa y segura, **Day One** es una excelente opción. Si prefieres algo multiplataforma y gratuito, **Journey** o **Diaro** pueden ser más adecuados.\n\n¿Quieres que te ayude a elegir según tu dispositivo o necesidades específicas?"
+     },
+     {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "status": "error",
+      "rank": null,
+      "competitors": [],
+      "answer": ""
+     }
+    ]
+   },
+   {
+    "question": {
+     "family": "use_case",
+     "question": "¿Cómo puedo crear un hábito diario de registrar una foto sin que me lleve mucho tiempo?"
+    },
+    "cells": [
+     {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "status": "nobody",
+      "rank": null,
+      "competitors": [],
+      "answer": "Crear un hábito diario de registrar una foto de manera rápida y sencilla es totalmente posible con algunos trucos para que no te tome mucho tiempo. Aquí te dejo algunos consejos prácticos:\n\n1. **Elige un momento fijo del día:** Por ejemplo, justo al despertar, durante el almuerzo o antes de dormir. Esto ayuda a que se convierta en parte de tu rutina diaria.\n\n2. **Usa una app sencilla o la cámara del móvil:** No necesitas editar ni complicarte. Solo toma la foto y guárdala en una carpeta específica o en una app de diario fotográfico.\n\n3. **Limita el tiempo:** Ponte un límite de 1-2 minutos para tomar y guardar la foto. Esto evita que te distraigas o te tome más tiempo del necesario.\n\n4. **Hazlo automático:** Configura recordatorios diarios en tu teléfono para que no se te olvide.\n\n5. **Simplifica la selección:** No busques la foto perfecta, solo captura algo que represente tu día o un momento que quieras recordar.\n\n6. **Organiza las fotos automáticamente:** Usa apps que ordenen las fotos por fecha o que te permitan crear álbumes automáticos para que no tengas que hacerlo manualmente.\n\n7. **Combínalo con otra actividad:** Por ejemplo, mientras tomas tu café o esperas el transporte, aprovecha ese momento para tomar la foto.\n\nSi quieres, puedo recomendarte algunas apps o métodos específicos para facilitar este hábito. ¿Te interesa?"
+     },
+     {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "status": "error",
+      "rank": null,
+      "competitors": [],
+      "answer": ""
+     }
+    ]
+   },
+   {
+    "question": {
+     "family": "use_case",
+     "question": "¿Cómo puedo ver fotos de un día específico en mi diario fotográfico?"
+    },
+    "cells": [
+     {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "status": "nobody",
+      "rank": null,
+      "competitors": [],
+      "answer": "Para ver fotos de un día específico en tu diario fotográfico, puedes seguir estos pasos generales (aunque pueden variar un poco según la aplicación o plataforma que uses):\n\n1. **Abrir la aplicación o plataforma** donde tienes tu diario fotográfico.\n2. **Buscar la opción de calendario o vista por fecha.** Muchas aplicaciones tienen una función que te permite navegar por fechas específicas.\n3. **Seleccionar la fecha deseada.** Usualmente, puedes hacer clic o tocar en el día específico para ver todas las fotos tomadas o guardadas ese día.\n4. **Ver las fotos asociadas a esa fecha.** La aplicación debería mostrarte todas las imágenes que corresponden a ese día.\n\nSi me dices qué aplicación o plataforma usas (por ejemplo, Google Fotos, Apple Fotos, una app específica de diario fotográfico, etc.), puedo darte instrucciones más detalladas. ¿Quieres?"
+     },
+     {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "status": "error",
+      "rank": null,
+      "competitors": [],
+      "answer": ""
+     }
+    ]
+   },
+   {
+    "question": {
+     "family": "use_case",
+     "question": "¿Qué app me permite hacer un diario con fotos sin que tenga likes ni seguidores?"
+    },
+    "cells": [
+     {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "status": "competitor",
+      "rank": null,
+      "competitors": [
+       "Day One",
+       "Journey",
+       "Diaro",
+       "Penzu"
+      ],
+      "answer": "Si buscas una app para hacer un diario personal con fotos, sin la presión de likes ni seguidores, aquí te dejo algunas opciones que podrían interesarte:\n\n1. **Day One**  \n   - Es una de las apps de diario más populares.  \n   - Permite agregar fotos, texto, ubicación y más.  \n   - Es completamente privada, no tiene funciones sociales como likes o seguidores.  \n   - Disponible para iOS, macOS y Android (aunque en Android es más limitada).\n\n2. **Journey**  \n   - Diario personal con soporte para fotos, videos y texto.  \n   - Enfocado en la privacidad, sin funciones sociales públicas.  \n   - Disponible en Android, iOS, Windows y web.\n\n3. **Diaro**  \n   - Permite crear diarios con fotos y texto.  \n   - Privado y sin funciones sociales.  \n   - Disponible en Android, iOS y web.\n\n4. **Penzu**  \n   - Diario online privado con opción de agregar fotos.  \n   - Enfocado en la privacidad, sin redes sociales integradas.  \n   - Disponible en web y apps móviles.\n\nEstas apps están diseñadas para uso personal, por lo que no tendrás que preocuparte por likes, seguidores o compartir tu contenido públicamente. ¿Quieres que te ayude a elegir la que mejor se adapte a tus necesidades?"
+     },
+     {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "status": "error",
+      "rank": null,
+      "competitors": [],
+      "answer": ""
+     }
+    ]
+   },
+   {
+    "question": {
+     "family": "comparison",
+     "question": "¿En qué se diferencia Picaday de 1 Second Everyday para hacer un diario fotográfico?"
+    },
+    "cells": [
+     {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "status": "brand",
+      "rank": null,
+      "competitors": [],
+      "answer": "Picaday y 1 Second Everyday son dos aplicaciones populares para crear diarios visuales, pero tienen enfoques y características diferentes que las distinguen:\n\n**Picaday:**\n- **Formato principal:** Diario fotográfico basado en imágenes estáticas.\n- **Funcionalidad:** Permite tomar o seleccionar una foto diaria para crear un collage o un calendario visual con las imágenes de cada día.\n- **Edición:** Ofrece opciones para organizar, editar y añadir texto o etiquetas a las fotos.\n- **Objetivo:** Crear un registro visual diario mediante fotos que se pueden ver en formato calendario o en un collage mensual/anual.\n- **Interfaz:** Suele ser sencilla y enfocada en la fotografía fija.\n\n**1 Second Everyday:**\n- **Formato principal:** Diario en video.\n- **Funcionalidad:** Permite grabar o seleccionar un clip de video de un segundo cada día, que luego se unen para crear un video continuo que resume el período (mes, año, etc.).\n- **Edición:** Incluye herramientas para recortar clips, añadir música y ajustar la duración de los videos.\n- **Objetivo:** Crear un diario dinámico y emocional que capture momentos en movimiento, mostrando una narrativa audiovisual del tiempo.\n- **Interfaz:** Más orientada a la edición de video y montaje.\n\n**En resumen:**\n- Picaday se centra en fotos diarias para un diario visual estático.\n- 1 Second Everyday se basa en clips de video de un segundo para un diario audiovisual dinámico.\n\nLa elección entre ambas depende de si prefieres un registro fotográfico tradicional o un resumen en video con momentos en movimiento."
+     },
+     {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "status": "error",
+      "rank": null,
+      "competitors": [],
+      "answer": ""
+     }
+    ]
+   },
+   {
+    "question": {
+     "family": "comparison",
+     "question": "¿Qué ventajas tiene Picaday frente a Day One para guardar fotos diarias?"
+    },
+    "cells": [
+     {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "status": "brand",
+      "rank": null,
+      "competitors": [],
+      "answer": "Picaday y Day One son dos aplicaciones populares para llevar diarios, pero tienen enfoques y características diferentes, especialmente en cómo manejan las fotos diarias. Aquí te detallo algunas ventajas que Picaday puede tener frente a Day One para guardar fotos diarias:\n\n1. **Enfoque específico en fotos diarias**:  \n   Picaday está diseñado principalmente para crear un diario fotográfico diario, lo que facilita la captura y organización de una foto por día. Esto hace que el proceso sea muy sencillo y rápido, ideal para usuarios que quieren centrarse en documentar visualmente su día a día.\n\n2. **Interfaz simple y directa para fotos**:  \n   Picaday ofrece una interfaz minimalista y enfocada en mostrar las fotos en un calendario o línea de tiempo, lo que facilita la visualización rápida de las imágenes diarias sin distracciones.\n\n3. **Automatización para fotos diarias**:  \n   Picaday puede automatizar la selección o recordatorio para tomar una foto cada día, ayudando a mantener la constancia sin complicaciones.\n\n4. **Menos funciones adicionales, más simplicidad**:  \n   Al no tener tantas funciones extra (como entradas de texto extensas, etiquetas complejas, o integración con múltiples tipos de contenido), Picaday puede ser más ligero y rápido para el propósito específico de guardar fotos diarias.\n\n5. **Visualización clara y atractiva**:  \n   La forma en que Picaday presenta las fotos (por ejemplo, en un calendario visual) puede ser más atractiva y útil para quienes quieren ver su progreso o recuerdos fotográficos de forma rápida y ordenada.\n\nEn contraste, Day One es una aplicación más completa para diarios que incluye texto, audio, ubicación, etiquetas, y más, lo que puede ser una ventaja si buscas un diario más detallado, pero puede resultar más complejo si solo quieres guardar fotos diarias de forma sencilla.\n\n**Resumen:**  \nSi tu objetivo principal es guardar y visualizar fotos diarias de manera simple, rápida y visualmente atractiva, Picaday puede ofrecer una experiencia más enfocada y directa que Day One. Por otro lado, si quieres un diario más completo con múltiples tipos de entradas, Day One es más adecuado."
+     },
+     {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "status": "error",
+      "rank": null,
+      "competitors": [],
+      "answer": ""
+     }
+    ]
+   },
+   {
+    "question": {
+     "family": "comparison",
+     "question": "¿Por qué elegir Picaday en lugar de Journey para un diario fotográfico?"
+    },
+    "cells": [
+     {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "status": "brand",
+      "rank": null,
+      "competitors": [],
+      "answer": "Elegir entre Picaday y Journey para un diario fotográfico depende de tus necesidades específicas, pero aquí te doy algunas razones por las que podrías preferir **Picaday** sobre **Journey** para este propósito:\n\n1. **Enfoque en fotos**:  \n   Picaday está diseñado específicamente para crear diarios fotográficos, por lo que su interfaz y funcionalidades están optimizadas para organizar, mostrar y navegar por fotos de manera sencilla y atractiva. Journey, aunque permite agregar fotos, es más un diario general que combina texto, multimedia y ubicación.\n\n2. **Simplicidad y rapidez**:  \n   Picaday suele ser más simple y directo para capturar y organizar fotos diarias sin muchas distracciones. Si tu objetivo principal es mantener un registro visual rápido y fácil, Picaday puede ser más eficiente.\n\n3. **Diseño visual**:  \n   Picaday ofrece una presentación visual tipo calendario o timeline muy intuitiva para ver tus fotos día a día, lo que facilita revivir momentos a través de imágenes. Journey tiene un enfoque más textual y narrativo, aunque también soporta fotos.\n\n4. **Menos funciones adicionales**:  \n   Si no necesitas funciones avanzadas como mapas, etiquetas complejas, exportación en múltiples formatos o integración con otras plataformas, Picaday puede ser más ligero y menos abrumador.\n\n5. **Privacidad y almacenamiento local**:  \n   Algunas versiones de Picaday permiten almacenar las fotos localmente sin necesidad de sincronización en la nube, lo que puede ser preferible para quienes valoran la privacidad. Journey suele estar más orientado a la sincronización en la nube.\n\nEn resumen, si tu prioridad es un diario fotográfico simple, visual y enfocado en imágenes, **Picaday** puede ser la mejor opción. Si buscas un diario más completo con texto, multimedia y funciones adicionales, **Journey** podría ser más adecuado."
+     },
+     {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "status": "error",
+      "rank": null,
+      "competitors": [],
+      "answer": ""
+     }
+    ]
+   },
+   {
+    "question": {
+     "family": "objection",
+     "question": "¿Picaday es seguro para guardar mis fotos privadas?"
+    },
+    "cells": [
+     {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "status": "brand",
+      "rank": null,
+      "competitors": [],
+      "answer": "Picaday es una aplicación diseñada para organizar y almacenar fotos, pero en cuanto a la seguridad para guardar fotos privadas, es importante considerar varios aspectos:\n\n1. **Cifrado:** Verifica si Picaday ofrece cifrado de extremo a extremo para tus fotos, lo que garantiza que solo tú puedas acceder a ellas.\n\n2. **Política de privacidad:** Revisa la política de privacidad de Picaday para entender cómo manejan y protegen tus datos.\n\n3. **Autenticación:** Comprueba si la aplicación ofrece opciones de autenticación fuerte, como contraseña, PIN o biometría, para proteger el acceso.\n\n4. **Reseñas y reputación:** Investiga opiniones de otros usuarios y expertos para conocer experiencias relacionadas con la seguridad.\n\nSi bien Picaday puede ser conveniente para organizar fotos, si buscas máxima seguridad para fotos muy privadas, podrías considerar aplicaciones especializadas en almacenamiento seguro con cifrado robusto, como Google Photos con autenticación en dos pasos, o servicios específicos de almacenamiento cifrado.\n\n¿Quieres que te ayude a encontrar opciones más seguras o detalles específicos sobre Picaday?"
+     },
+     {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "status": "error",
+      "rank": null,
+      "competitors": [],
+      "answer": ""
+     }
+    ]
+   },
+   {
+    "question": {
+     "family": "objection",
+     "question": "¿Vale la pena pagar por Picaday si hay un plan gratis?"
+    },
+    "cells": [
+     {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "status": "brand",
+      "rank": null,
+      "competitors": [],
+      "answer": "Depende de tus necesidades y de cómo planeas usar Picaday. El plan gratuito suele ofrecer funciones básicas que pueden ser suficientes si solo quieres una experiencia sencilla para organizar y compartir tus fotos. Sin embargo, los planes de pago generalmente incluyen ventajas como:\n\n- Almacenamiento adicional.\n- Acceso a funciones premium (edición avanzada, filtros exclusivos, organización mejorada).\n- Eliminación de anuncios.\n- Soporte prioritario.\n- Opciones de privacidad y seguridad mejoradas.\n\nSi usas Picaday de manera casual, el plan gratuito probablemente sea suficiente. Pero si buscas aprovechar al máximo la plataforma, necesitas más espacio o funciones avanzadas, puede valer la pena invertir en un plan de pago. Te recomiendo revisar las diferencias específicas entre los planes en la página oficial para tomar una decisión informada. ¿Quieres que te ayude a comparar las características?"
+     },
+     {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "status": "error",
+      "rank": null,
+      "competitors": [],
+      "answer": ""
+     }
+    ]
+   },
+   {
+    "question": {
+     "family": "objection",
+     "question": "¿Puedo usar Picaday sin conexión a internet o necesito estar siempre online?"
+    },
+    "cells": [
+     {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "status": "nobody",
+      "rank": null,
+      "competitors": [],
+      "answer": "Sí, puedes usar **Pikaday** sin conexión a internet siempre y cuando ya tengas los archivos necesarios (JavaScript y CSS) descargados y alojados localmente en tu proyecto. Pikaday es una librería de JavaScript para seleccionar fechas que no depende de una conexión en línea para funcionar; simplemente necesitas incluir los archivos en tu proyecto.\n\nSi estás incluyendo Pikaday desde un CDN (Content Delivery Network), entonces sí necesitarás conexión a internet para cargar esos archivos. Pero si descargas los archivos y los sirves desde tu propio servidor o los tienes localmente, podrás usar Pikaday completamente offline.\n\n**En resumen:**\n\n- **Con conexión a internet:** Puedes usar Pikaday desde un CDN o localmente.\n- **Sin conexión a internet:** Solo funciona si tienes los archivos de Pikaday descargados y referenciados localmente.\n\n¿Quieres que te ayude a descargar y configurar Pikaday para uso offline?"
+     },
+     {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "status": "error",
+      "rank": null,
+      "competitors": [],
+      "answer": ""
+     }
+    ]
+   },
+   {
+    "question": {
+     "family": "objection",
+     "question": "¿Picaday respeta mi privacidad y no comparte mis fotos con terceros?"
+    },
+    "cells": [
+     {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "status": "brand",
+      "rank": null,
+      "competitors": [],
+      "answer": "Picaday se toma muy en serio la privacidad de sus usuarios. Según su política de privacidad, Picaday no comparte tus fotos con terceros sin tu consentimiento explícito. Tus imágenes se almacenan de forma segura y se utilizan únicamente para los fines relacionados con el servicio que ofrece la aplicación. Sin embargo, siempre es recomendable revisar la política de privacidad actualizada directamente en su sitio web o dentro de la aplicación para estar al tanto de cualquier cambio. ¿Quieres que te ayude a encontrar el enlace a su política de privacidad?"
+     },
+     {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "status": "error",
+      "rank": null,
+      "competitors": [],
+      "answer": ""
+     }
+    ]
+   },
+   {
+    "question": {
+     "family": "context",
+     "question": "¿Hay apps de diario fotográfico que funcionen bien en Argentina y en español?"
+    },
+    "cells": [
+     {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "status": "competitor",
+      "rank": null,
+      "competitors": [
+       "Day One",
+       "Journey",
+       "Diaro",
+       "Penzu"
+      ],
+      "answer": "¡Claro! Existen varias apps de diario fotográfico que funcionan bien en Argentina y están disponibles en español. Aquí te dejo algunas opciones populares y recomendadas:\n\n1. **Day One**  \n   - **Descripción:** Es una de las apps de diario más conocidas y completas. Permite agregar fotos, texto, etiquetas, ubicación y más.  \n   - **Idioma:** Disponible en español.  \n   - **Disponibilidad:** iOS, macOS y Android (aunque en Android puede tener menos funciones).  \n   - **Ventajas:** Interfaz limpia, sincronización en la nube, recordatorios para escribir, exportación en varios formatos.\n\n2. **Journey**  \n   - **Descripción:** Diario digital que permite agregar fotos, videos, texto y ubicación. Tiene una interfaz amigable y soporte para múltiples plataformas.  \n   - **Idioma:** Disponible en español.  \n   - **Disponibilidad:** Android, iOS, Windows, macOS y web.  \n   - **Ventajas:** Sincronización en Google Drive, soporte multiplataforma, exportación a PDF y otros formatos.\n\n3. **Diaro**  \n   - **Descripción:** App sencilla para llevar un diario personal con fotos, etiquetas y organización por carpetas.  \n   - **Idioma:** Español disponible.  \n   - **Disponibilidad:** Android, iOS y web.  \n   - **Ventajas:** Fácil de usar, permite importar y exportar datos, sincronización en la nube.\n\n4. **Penzu**  \n   - **Descripción:** Diario privado en línea con opción de agregar fotos y texto.  \n   - **Idioma:** Tiene versión en español (aunque algunas funciones pueden estar en inglés).  \n   - **Disponibilidad:** Web, iOS y Android.  \n   - **Ventajas:** Enfoque en privacidad, cifrado, recordatorios.\n\n---\n\n**Consejos para elegir:**  \n- Verifica que la app tenga soporte en español y que la interfaz te resulte cómoda.  \n- Considera si quieres sincronización en la nube para acceder desde varios dispositivos.  \n- Revisa si la app permite exportar tus entradas para respaldos.  \n- Algunas apps tienen versiones gratuitas con funciones limitadas y versiones premium.\n\nSi quieres, puedo ayudarte a elegir la que mejor se adapte a tus necesidades específicas. ¿Buscas algo simple o con muchas funciones? ¿Prefieres que sea gratis o no te importa pagar?"
+     },
+     {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "status": "error",
+      "rank": null,
+      "competitors": [],
+      "answer": ""
+     }
+    ]
+   }
+  ],
+  "totals": {
+   "cells": 24,
+   "brand": 6,
+   "competitor": 3,
+   "nobody": 3,
+   "error": 12
+  },
+  "openTotals": {
+   "cells": 10,
+   "brand": 0,
+   "competitor": 3,
+   "nobody": 2,
+   "error": 5
+  },
+  "competitors": [
+   {
+    "name": "Day One",
+    "mentions": 5
+   },
+   {
+    "name": "Journey",
+    "mentions": 5
+   },
+   {
+    "name": "Penzu",
+    "mentions": 4
+   },
+   {
+    "name": "Diaro",
+    "mentions": 3
+   },
+   {
+    "name": "Momento",
+    "mentions": 3
+   },
+   {
+    "name": "Google Fotos",
+    "mentions": 2
+   },
+   {
+    "name": "Google Photos",
+    "mentions": 1
+   },
+   {
+    "name": "Daylio",
+    "mentions": 1
+   },
+   {
+    "name": "Reflectly",
+    "mentions": 1
+   },
+   {
+    "name": "Stoic",
+    "mentions": 1
+   },
+   {
+    "name": "Timehop",
+    "mentions": 1
+   },
+   {
+    "name": "1 Second Everyday",
+    "mentions": 1
+   }
+  ]
+ }
+}

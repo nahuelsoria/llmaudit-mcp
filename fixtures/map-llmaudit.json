@@ -1,0 +1,382 @@
+{
+ "ok": true,
+ "map": {
+  "rows": [
+   {
+    "cells": [
+     {
+      "rank": null,
+      "model": "gpt-4.1-mini",
+      "answer": "Para saber si tu marca es recomendada primero por ChatGPT o Claude en búsquedas relacionadas con IA, debes entender cómo funcionan estos modelos y cómo se integran en las plataformas de búsqueda o aplicaciones que los utilizan. Aquí te dejo algunos puntos clave y pasos que puedes seguir:\n\n1. **Entiende que ChatGPT y Claude son modelos de lenguaje, no motores de búsqueda tradicionales**  \n   - ChatGPT (de OpenAI) y Claude (de Anthropic) son modelos de lenguaje que generan respuestas basadas en el texto que reciben, no indexan ni clasifican páginas web como Google.  \n   - La \"recomendación\" de una marca depende de cómo se formule la pregunta y de los datos con los que fueron entrenados, que tienen un límite temporal (por ejemplo, ChatGPT tiene conocimiento hasta 2023-11 en su versión GPT-4).\n\n2. **Consulta directamente en cada modelo**  \n   - Puedes hacer preguntas similares a ChatGPT y a Claude (si tienes acceso a ambos) para ver qué respuesta dan sobre tu marca. Por ejemplo:  \n     - \"¿Qué opinas de la marca [tu marca] en el ámbito de la inteligencia artificial?\"  \n     - \"¿Puedes recomendarme marcas líderes en IA?\"  \n   - Observa si mencionan tu marca y en qué posición o contexto.\n\n3. **Revisa integraciones en plataformas de búsqueda**  \n   - Algunos motores de búsqueda o asistentes virtuales integran ChatGPT o Claude para responder preguntas. Por ejemplo, Bing Chat usa tecnología de OpenAI.  \n   - En estos casos, la \"recomendación\" puede depender de cómo el motor de búsqueda prioriza la información y no solo del modelo de lenguaje.  \n   - Puedes hacer búsquedas en estas plataformas y ver si tu marca aparece en las respuestas generadas.\n\n4. **Optimiza la presencia online de tu marca**  \n   - Para que cualquier modelo o motor de búsqueda \"recomiende\" tu marca, es fundamental que tu marca tenga buena presencia en internet:  \n     - Sitio web optimizado para SEO.  \n     - Contenido relevante y actualizado.  \n     - Presencia en redes sociales y medios especializados.  \n   - Los modelos de lenguaje suelen basar sus respuestas en información pública y popular.\n\n5. **Monitorea menciones y reputación online**  \n   - Usa herramientas de monitoreo para saber cómo y dónde se menciona tu marca. Esto influye en la probabilidad de que un modelo de lenguaje la recomiende.\n\n6. **Considera que los modelos no \"clasifican\" marcas en orden fijo**  \n   - A diferencia de un motor de búsqueda, los modelos de lenguaje generan respuestas en función del contexto y la pregunta, no entregan listas ordenadas de recomendaciones.\n\n---\n\n**En resumen:**  \nNo hay una forma directa de saber si ChatGPT o Claude \"recomiendan primero\" tu marca, porque no funcionan como motores de búsqueda con rankings fijos. Lo mejor es probar ambos modelos con preguntas similares, mejorar la presencia online de tu marca y monitorear cómo aparece en las respuestas generadas por estas IA en diferentes plataformas.\n\nSi quieres, puedo ayudarte a formular preguntas para probar en ChatGPT o darte consejos para mejorar la visibilidad de tu marca en el ecosistema digital. ¿Te interesa?",
+      "status": "nobody",
+      "provider": "openai",
+      "competitors": []
+     },
+     {
+      "rank": null,
+      "model": "claude-haiku-4-5",
+      "answer": "# Formas de verificar recomendaciones de IA\n\n## 1. **Pruebas directas**\n- Haz búsquedas similares en ambas plataformas\n- Usa prompts idénticos para comparar respuestas\n- Documenta el orden y contexto de las menciones\n\n## 2. **Herramientas de monitoreo**\n- **Google Alerts** (aunque es limitado para IA)\n- **Semrush/Ahrefs** (rastrean menciones en web)\n- **Brand24** o **Mention** (monitoreo general)\n\n## 3. **Lo que debes saber**\n⚠️ **Limitaciones importantes:**\n- ChatGPT y Claude no tienen \"rankings\" públicos como Google\n- Las respuestas varían según el prompt exacto\n- Ambos tienen sesgos según su entrenamiento\n- No hay acceso a datos de preferencia agregados\n\n## 4. **Mejor enfoque**\nEn lugar de obsesionarse con esto:\n- **Optimiza tu contenido** para ser mencionable (datos verificables, autoridad)\n- **Crea contenido de calidad** que ambos modelos puedan citar\n- **Monitorea menciones reales** en conversaciones públicas\n- **Enfócate en SEO tradicional** (sigue siendo más medible)\n\n¿Hay un sector específico donde quieres mejorar tu visibilidad en búsquedas de IA?",
+      "status": "competitor",
+      "provider": "anthropic",
+      "competitors": [
+       "Google Alerts",
+       "Semrush",
+       "Ahrefs"
+      ]
+     }
+    ],
+    "question": {
+     "family": "use_case",
+     "question": "¿Cómo puedo saber si mi marca es recomendada primero por ChatGPT o Claude en búsquedas de IA?"
+    }
+   },
+   {
+    "cells": [
+     {
+      "rank": null,
+      "model": "gpt-4.1-mini",
+      "answer": "Para auditar la visibilidad de tu marca en IA sin necesidad de registrarte, puedes utilizar algunas herramientas gratuitas y accesibles que no requieren creación de cuenta. Aquí te dejo algunas opciones:\n\n1. **Google Search**  \n   Simplemente busca el nombre de tu marca junto con términos relacionados a IA o productos específicos. Esto te dará una idea rápida de cómo aparece tu marca en los resultados de búsqueda, incluyendo noticias, blogs y foros.\n\n2. **AnswerThePublic** (versión gratuita sin registro limitado)  \n   Esta herramienta genera preguntas y frases relacionadas con tu marca o términos clave, lo que te ayuda a entender qué se está preguntando o buscando en torno a tu marca.\n\n3. **Ubersuggest** (modo sin registro limitado)  \n   Permite hacer búsquedas básicas para ver qué palabras clave están asociadas a tu marca y cómo se posiciona en términos de SEO.\n\n4. **Google Trends**  \n   Sin necesidad de registrarte, puedes ver la popularidad de búsqueda de tu marca a lo largo del tiempo y compararla con otras marcas o términos relacionados con IA.\n\n5. **Social Mention**  \n   Es un buscador de menciones en redes sociales y la web en tiempo real. No requiere registro y te muestra cómo y dónde se menciona tu marca.\n\n6. **Talkwalker Alerts** (requiere registro para alertas, pero puedes hacer búsquedas puntuales sin registrarte)  \n   Puedes hacer búsquedas puntuales para ver menciones recientes de tu marca en la web.\n\nSi buscas algo más específico para IA, muchas herramientas especializadas suelen requerir registro, pero estas opciones te permiten hacer una auditoría básica sin crear cuenta. ¿Quieres que te ayude a hacer una búsqueda concreta o a interpretar resultados?",
+      "status": "competitor",
+      "provider": "openai",
+      "competitors": [
+       "AnswerThePublic",
+       "Ubersuggest",
+       "Google Trends",
+       "Talkwalker Alerts"
+      ]
+     },
+     {
+      "rank": null,
+      "model": "claude-haiku-4-5",
+      "answer": "# Herramientas para auditar visibilidad en IA sin registro\n\nAquí tienes opciones prácticas:\n\n## **Búsqueda directa (gratuita)**\n- **ChatGPT, Claude, Gemini**: Pregunta directamente qué saben de tu marca\n- Prueba con: *\"¿Qué sabes sobre [tu marca]?\"*\n- Observa qué información aparece y qué falta\n\n## **Herramientas sin registro obligatorio**\n\n| Herramienta | Qué hace |\n|---|---|\n| **Google Search Console** | Ver cómo te indexa Google (base para IA) |\n| **Bing Webmaster Tools** | Indexación en buscadores |\n| **Perplexity.ai** | Busca y resume fuentes (sin login inicial) |\n\n## **Análisis manual rápido**\n\n1. **Busca tu marca** en Google, Bing, DuckDuckGo\n2. **Revisa Wikipedia** (si aplica)\n3. **Consulta directorios** de tu industria\n4. **Verifica redes sociales** indexadas\n\n## **Lo importante**\n\nLa mayoría de IA se entrena con datos públicos indexados. Si no apareces en buscadores, probablemente no estés en IA.\n\n**¿Qué aspecto específico te preocupa?** (presencia general, información incorrecta, falta de visibilidad)",
+      "status": "nobody",
+      "provider": "anthropic",
+      "competitors": []
+     }
+    ],
+    "question": {
+     "family": "use_case",
+     "question": "¿Qué herramienta puedo usar para auditar la visibilidad de mi marca en IA sin tener que registrarme?"
+    }
+   },
+   {
+    "cells": [
+     {
+      "rank": null,
+      "model": "gpt-4.1-mini",
+      "answer": "Para identificar qué preguntas hacen tus compradores a los asistentes de IA y así mejorar tu contenido, puedes seguir estos pasos:\n\n1. **Analiza las interacciones con asistentes de IA propios o de terceros**  \n   - Si tu empresa tiene un chatbot o asistente virtual, revisa los registros de conversación para identificar las preguntas más frecuentes.  \n   - Si no tienes uno, considera implementar un chatbot en tu sitio web o canales de atención para recopilar datos.\n\n2. **Utiliza herramientas de análisis de búsqueda y preguntas**  \n   - Plataformas como **Answer the Public**, **AlsoAsked** o **Google Search Console** te permiten ver qué preguntas relacionadas con tu nicho hacen los usuarios en buscadores.  \n   - Estas preguntas suelen ser similares a las que los usuarios plantean a asistentes de IA.\n\n3. **Consulta foros, redes sociales y comunidades online**  \n   - Revisa sitios como Reddit, Quora, grupos de Facebook o LinkedIn donde tu público objetivo interactúa.  \n   - Observa las dudas y preguntas recurrentes que plantean.\n\n4. **Monitorea asistentes de IA populares**  \n   - Algunos asistentes como ChatGPT o Alexa no permiten acceso directo a sus datos, pero puedes hacer pruebas tú mismo: ingresa preguntas comunes que creas que tus compradores harían y observa las respuestas.  \n   - Esto te dará una idea de qué tipo de información buscan y cómo la formulan.\n\n5. **Solicita feedback directo a tus clientes**  \n   - Pregunta a tus compradores qué dudas tienen o qué preguntas harían a un asistente virtual.  \n   - Puedes hacerlo mediante encuestas, entrevistas o formularios.\n\n6. **Implementa análisis de palabras clave conversacionales**  \n   - Las búsquedas por voz y asistentes de IA suelen usar lenguaje natural y preguntas completas.  \n   - Optimiza tu contenido para responder a estas preguntas específicas, usando frases como “cómo”, “qué es”, “por qué”, etc.\n\n---\n\n**En resumen:** combina el análisis de datos propios (chatbots, búsquedas en tu web), herramientas externas (Google Search Console, Answer the Public), y la observación directa de tu audiencia en foros y redes sociales para identificar las preguntas que hacen tus compradores a asistentes de IA. Así podrás crear contenido que responda exactamente a sus necesidades y mejorar la experiencia del usuario.",
+      "status": "nobody",
+      "provider": "openai",
+      "competitors": []
+     },
+     {
+      "rank": null,
+      "model": "claude-haiku-4-5",
+      "answer": "# Estrategias para identificar preguntas de tus compradores a IA\n\n## 1. **Herramientas de análisis directo**\n- **Google Search Console**: Ve qué búsquedas te traen tráfico\n- **Semrush/Ahrefs**: Analiza palabras clave y intenciones de búsqueda\n- **Answer the Public**: Visualiza preguntas reales que hace la gente\n\n## 2. **Monitoreo de conversaciones**\n- Revisa comentarios en redes sociales y tu sitio\n- Analiza preguntas en grupos de Facebook o LinkedIn de tu industria\n- Estudia reseñas donde clientes expresan dudas\n\n## 3. **Prueba directa con IA**\n- Usa ChatGPT, Claude o Gemini con prompts sobre tu industria\n- Pregunta: *\"¿Qué preguntas hace la gente sobre [tu producto]?\"*\n- Identifica qué respuestas son incompletas o incorrectas\n\n## 4. **Análisis de tu audiencia**\n- **Encuestas**: Pregunta directamente qué buscan en IA\n- **Entrevistas con clientes**: Descubre sus dudas reales\n- **Datos de atención al cliente**: Revisa tickets y chats\n\n## 5. **Crear contenido estratégico**\nEnfócate en:\n- Preguntas que IA responde mal o incompleto\n- Contexto local/específico que IA no tiene\n- Experiencias y casos reales\n- Información actualizada\n\n**Consejo clave**: No compitas con IA en información genérica. Diferénciate con expertise, casos de uso y perspectiva única.\n\n¿Qué tipo de negocio tienes? Puedo ser más específico.",
+      "status": "competitor",
+      "provider": "anthropic",
+      "competitors": [
+       "Google Search Console",
+       "Semrush",
+       "Ahrefs",
+       "Answer the Public"
+      ]
+     }
+    ],
+    "question": {
+     "family": "use_case",
+     "question": "¿Cómo identificar qué preguntas hacen mis compradores a los asistentes de IA para mejorar mi contenido?"
+    }
+   },
+   {
+    "cells": [
+     {
+      "rank": null,
+      "model": "gpt-4.1-mini",
+      "answer": "¡Hola! Sí, existen formas de monitorear en tiempo real si la inteligencia artificial (IA) o los sistemas automatizados están recomendando tu marca o la de tus competidores, aunque la implementación y efectividad dependen del contexto específico (por ejemplo, plataformas de publicidad, motores de búsqueda, asistentes virtuales, etc.). Aquí te dejo algunas opciones y enfoques que podrías considerar:\n\n### 1. **Monitoreo de menciones y recomendaciones en redes sociales y plataformas digitales**\n- **Herramientas de escucha social (Social Listening):** Plataformas como Brandwatch, Talkwalker, Sprout Social o Mention pueden rastrear en tiempo real menciones de tu marca y de tus competidores, incluyendo recomendaciones o comentarios positivos/negativos.\n- **Análisis de sentimiento:** Estas herramientas también pueden ayudarte a entender si las menciones son recomendaciones o críticas.\n\n### 2. **Análisis de resultados en motores de búsqueda y asistentes virtuales**\n- **SEO y SEM:** Puedes usar herramientas como SEMrush, Ahrefs o Google Ads para monitorear qué marcas aparecen en los resultados patrocinados o en búsquedas orgánicas relacionadas con tu sector.\n- **Pruebas automatizadas:** Crear scripts o bots que realicen búsquedas periódicas y registren qué marcas son recomendadas o aparecen en los primeros lugares.\n- **Asistentes de voz:** Aunque es más complejo, puedes hacer pruebas manuales o semi-automatizadas para ver qué marcas recomiendan asistentes como Alexa, Google Assistant o Siri en consultas relacionadas.\n\n### 3. **Monitoreo de recomendaciones en plataformas de e-commerce**\n- Si tu marca y la de tus competidores están en plataformas como Amazon, Mercado Libre, etc., puedes usar APIs o scrapers para monitorear en tiempo real qué productos son recomendados o destacados.\n\n### 4. **Análisis de algoritmos de recomendación**\n- En plataformas que usan IA para recomendar productos o servicios (como Netflix, Spotify, o plataformas de retail), puedes analizar patrones de recomendación mediante pruebas controladas o colaborando con la plataforma para obtener datos.\n\n### 5. **Herramientas de análisis de competencia basadas en IA**\n- Algunas soluciones avanzadas usan IA para analizar en tiempo real la presencia y recomendación de marcas en diferentes canales digitales, integrando datos de múltiples fuentes.\n\n---\n\n### Consideraciones importantes:\n- **Privacidad y términos de uso:** Asegúrate de cumplir con las políticas de las plataformas y la legislación vigente al recolectar datos.\n- **Automatización:** La creación de sistemas automatizados para monitoreo en tiempo real puede requerir desarrollo personalizado.\n- **Interpretación de datos:** No siempre es sencillo determinar si una mención es una recomendación directa; el análisis de contexto y sentimiento es clave.\n\n---\n\nSi me cuentas un poco más sobre tu sector, canales específicos o qué tipo de IA o plataformas te interesan, puedo ayudarte a diseñar una estrategia más concreta o recomendar herramientas específicas. ¿Quieres?",
+      "status": "nobody",
+      "provider": "openai",
+      "competitors": []
+     },
+     {
+      "rank": null,
+      "model": "claude-haiku-4-5",
+      "answer": "# Sí, existen varias formas de hacerlo:\n\n## **Herramientas directas**\n\n- **ChatGPT, Claude, Gemini**: Prueba directamente con prompts específicos (\"¿Qué marca de X me recomiendas?\")\n- **Brand monitoring tools**: Algunas como Brandwatch o Mention tienen módulos de IA\n- **Perplexity AI**: Muestra fuentes y es útil para ver qué recomienda\n\n## **Métodos más sistemáticos**\n\n**Auditoría manual:**\n- Crea 20-30 prompts variados sobre tu categoría\n- Documenta qué marca aparece primero\n- Compara frecuencia vs competidores\n\n**Herramientas especializadas:**\n- **SEMrush/Ahrefs**: Analizan menciones en contenido que entrena IA\n- **Meltwater**: Monitorea recomendaciones en tiempo real\n- **Datos de entrenamiento**: Revisa qué contenido tuyo está indexado\n\n## **Lo importante a medir**\n\n- Posición en la recomendación (¿primera o tercera?)\n- Frecuencia de aparición\n- Contexto (¿por qué te recomienda?)\n- Variación según el modelo de IA\n\n## **Realidad práctica**\n\nLas recomendaciones dependen de:\n- Tu presencia en contenido de entrenamiento\n- Reputación online\n- Recencia de datos del modelo\n\n¿Qué categoría de producto es? Puedo sugerirte prompts más específicos.",
+      "status": "competitor",
+      "provider": "anthropic",
+      "competitors": [
+       "ChatGPT",
+       "Claude",
+       "Gemini",
+       "Perplexity AI",
+       "SEMrush",
+       "Ahrefs",
+       "Meltwater"
+      ]
+     }
+    ],
+    "question": {
+     "family": "use_case",
+     "question": "¿Existe una forma de comparar en tiempo real si la IA recomienda mi marca o la de mis competidores?"
+    }
+   },
+   {
+    "cells": [
+     {
+      "rank": null,
+      "model": "gpt-4.1-mini",
+      "answer": "Lamentablemente, no dispongo de información específica sobre **LLM Audit** y **Peec AI** en el contexto de auditoría de visibilidad en IA, ya que no son herramientas ampliamente documentadas o conocidas en mis fuentes hasta la fecha de corte en junio de 2024.\n\nSin embargo, puedo ayudarte a entender en términos generales cómo suelen diferenciarse las herramientas de auditoría de visibilidad en IA, y qué aspectos podrías considerar para comparar dos soluciones como LLM Audit y Peec AI:\n\n1. **Enfoque de auditoría**:  \n   - Algunas herramientas se centran en auditar modelos de lenguaje grandes (LLMs) específicamente, evaluando aspectos como sesgos, explicabilidad, y cumplimiento normativo.  \n   - Otras pueden ofrecer una auditoría más amplia de sistemas de IA, incluyendo visibilidad en datos, procesos y resultados.\n\n2. **Nivel de visibilidad**:  \n   - Algunas soluciones proporcionan visibilidad a nivel de modelo (por ejemplo, interpretabilidad de predicciones, análisis de atención en LLMs).  \n   - Otras ofrecen visibilidad a nivel de pipeline o infraestructura, monitoreando cómo se despliegan y operan los modelos en producción.\n\n3. **Automatización y reportes**:  \n   - Herramientas pueden diferir en la automatización de la auditoría, generación de reportes, alertas y recomendaciones.  \n   - Algunas integran dashboards interactivos para seguimiento en tiempo real.\n\n4. **Integraciones y compatibilidad**:  \n   - La compatibilidad con diferentes frameworks de IA, plataformas cloud o sistemas internos puede variar.  \n   - También puede diferir el soporte para distintos tipos de modelos o datos.\n\n5. **Orientación y casos de uso**:  \n   - Algunas herramientas están orientadas a sectores específicos (finanzas, salud, etc.) con requisitos regulatorios particulares.  \n   - Otras son más generales.\n\nSi tienes información más específica sobre las funcionalidades o características de LLM Audit y Peec AI, puedo ayudarte a hacer una comparación más detallada. También te recomiendo revisar la documentación oficial o contactar con los proveedores para obtener detalles precisos sobre sus diferencias en auditoría de visibilidad en IA.",
+      "status": "brand",
+      "provider": "openai",
+      "competitors": []
+     },
+     {
+      "rank": null,
+      "model": "claude-haiku-4-5",
+      "answer": "# Diferencias entre LLM Audit y Peec AI\n\nNo tengo información específica y verificada sobre estas dos herramientas de auditoría de IA en mi base de datos actual. Para darte una respuesta precisa, necesitaría:\n\n## Lo que podría ayudarme:\n\n1. **Fuentes actuales** - ¿Dónde encontraste estas herramientas?\n2. **Contexto** - ¿Son productos específicos de empresas concretas?\n3. **Detalles** - ¿Qué documentación oficial consultaste?\n\n## Lo que puedo sugerir:\n\nPara comparar herramientas de auditoría de IA, típicamente evalúa:\n\n- **Alcance**: ¿Qué modelos auditan? (LLMs, modelos de visión, etc.)\n- **Métricas**: Sesgo, transparencia, explicabilidad, seguridad\n- **Automatización**: Nivel de análisis automatizado vs. manual\n- **Reportes**: Formato y profundidad de resultados\n- **Integración**: Compatibilidad con tus sistemas\n\n## Recomendación:\n\n¿Podrías compartir:\n- URLs o documentación oficial\n- Contexto de dónde las encontraste\n- Qué aspecto específico de \"visibilidad en IA\" te interesa\n\nAsí podré darte una comparación más útil y precisa.",
+      "status": "brand",
+      "provider": "anthropic",
+      "competitors": []
+     }
+    ],
+    "question": {
+     "family": "comparison",
+     "question": "¿En qué se diferencia LLM Audit de Peec AI para auditar visibilidad en IA?"
+    }
+   },
+   {
+    "cells": [
+     {
+      "rank": null,
+      "model": "gpt-4.1-mini",
+      "answer": "Para comparar **LLM Audit** y **Otterly** en el contexto de evaluar si una IA recomienda tu marca, es importante entender las características y ventajas específicas de cada herramienta. Aunque ambas pueden ayudar a auditar y analizar modelos de lenguaje (LLMs) y su comportamiento, aquí te detallo las ventajas que **LLM Audit** podría tener frente a **Otterly** para este propósito:\n\n### Ventajas de LLM Audit frente a Otterly para saber si la IA recomienda tu marca\n\n1. **Enfoque especializado en auditoría de sesgos y recomendaciones en LLMs**  \n   LLM Audit está diseñado específicamente para auditar modelos de lenguaje, identificando sesgos, tendencias y patrones en las respuestas generadas. Esto incluye la capacidad de detectar si un modelo favorece o recomienda ciertas marcas, productos o conceptos, lo que es clave para saber si la IA recomienda tu marca.\n\n2. **Análisis profundo y detallado de respuestas**  \n   LLM Audit suele ofrecer análisis más detallados y métricas específicas sobre cómo y cuándo un modelo menciona o recomienda una marca. Esto puede incluir frecuencia, contexto, tono y comparación con otras marcas, lo que permite una evaluación más precisa.\n\n3. **Transparencia y explicabilidad**  \n   LLM Audit tiende a enfocarse en la transparencia del modelo, proporcionando explicaciones sobre por qué y cómo se generan ciertas recomendaciones. Esto es útil para entender si la recomendación de tu marca es intencional, un sesgo inadvertido o simplemente un resultado aleatorio.\n\n4. **Personalización para casos de uso específicos**  \n   LLM Audit puede configurarse para auditar modelos en contextos muy específicos, como marketing o branding, permitiendo adaptar las métricas y análisis para detectar recomendaciones de marca con mayor precisión.\n\n5. **Integración con múltiples modelos y plataformas**  \n   LLM Audit suele ser compatible con varios modelos de lenguaje y puede integrarse en diferentes entornos, facilitando la auditoría de modelos usados en distintas aplicaciones donde tu marca podría ser mencionada.\n\n---\n\n### Consideraciones sobre Otterly\n\n- **Otterly** es una herramienta más orientada a la transcripción y análisis de audio, reuniones y conversaciones, con capacidades de resumen y búsqueda.  \n- Aunque puede ayudar a analizar menciones de marcas en conversaciones transcritas, no está especializada en auditar modelos de lenguaje para detectar recomendaciones o sesgos en la generación de texto.  \n- Su enfoque es más general y menos centrado en la auditoría de IA o LLMs, por lo que puede no ofrecer la profundidad analítica necesaria para evaluar recomendaciones de marca en respuestas generadas por IA.\n\n---\n\n### Resumen\n\n| Aspecto                      | LLM Audit                              | Otterly                              |\n|-----------------------------|--------------------------------------|------------------------------------|\n| Enfoque                     | Auditoría de modelos de lenguaje y sesgos | Transcripción y análisis de audio y texto |\n| Detección de recomendaciones de marca | Sí, con análisis detallado y métricas específicas | Limitado, más enfocado en menciones en texto transcrito |\n| Explicabilidad y transparencia | Alta, con explicaciones sobre sesgos y recomendaciones | Baja, no está diseñado para auditar modelos de IA |\n| Personalización             | Alta, adaptable a casos de uso específicos | Limitada, orientada a análisis general de conversaciones |\n| Integración con modelos LLM | Sí, compatible con múltiples modelos | No es su foco principal |\n\n---\n\nSi tu objetivo principal es **saber si la IA recomienda tu marca y entender cómo lo hace**, **LLM Audit** es la opción más adecuada debido a su especialización en auditoría de modelos de lenguaje y análisis de sesgos y recomendaciones. Por otro lado, **Otterly** puede ser útil si quieres analizar menciones de tu marca en conversaciones reales, pero no para auditar el comportamiento de la IA en la generación de texto.",
+      "status": "brand",
+      "provider": "openai",
+      "competitors": []
+     },
+     {
+      "rank": null,
+      "model": "claude-haiku-4-5",
+      "answer": "# Comparación LLM Audit vs Otterly\n\nNo tengo información verificada sobre estas herramientas específicas en mi base de datos. Antes de responder, necesitaría aclarar:\n\n## Lo que debería verificar:\n\n1. **¿Existen realmente ambas?** - Confirma que son herramientas actuales y activas\n2. **Sus funcionalidades específicas** - Qué exactamente miden cada una\n3. **Casos de uso** - Si realmente compiten en el mismo espacio\n\n## Preguntas útiles para tu evaluación:\n\n- ¿Qué modelos de IA auditan? (ChatGPT, Claude, Gemini, etc.)\n- ¿Cómo miden las recomendaciones de marca?\n- ¿Qué métricas proporcionan?\n- ¿Cuál es el costo y facilidad de uso?\n- ¿Tienen reviews o casos de éxito documentados?\n\n## Mi recomendación:\n\nTe sugiero que **contactes directamente** con ambos proveedores o busques:\n- Demos gratuitas\n- Testimonios de usuarios\n- Comparativas recientes en blogs de marketing/IA\n\n¿Podrías compartir dónde encontraste estas herramientas? Así podría darte información más precisa.",
+      "status": "brand",
+      "provider": "anthropic",
+      "competitors": []
+     }
+    ],
+    "question": {
+     "family": "comparison",
+     "question": "¿Qué ventajas tiene LLM Audit frente a Otterly para saber si la IA recomienda mi marca?"
+    }
+   },
+   {
+    "cells": [
+     {
+      "rank": 1,
+      "model": "gpt-4.1-mini",
+      "answer": "No tengo información específica y actualizada sobre una comparación directa entre **LLM Audit** y **Profound** en términos de precisión y facilidad de uso, ya que ambos pueden referirse a diferentes productos o herramientas dependiendo del contexto y la industria.\n\nSin embargo, puedo ofrecerte una guía general sobre cómo evaluar estas dos características en herramientas de auditoría o análisis basadas en modelos de lenguaje (LLM) o inteligencia artificial:\n\n1. **Precisión**:\n   - **LLM Audit**: Si se trata de una herramienta que utiliza modelos de lenguaje para auditar documentos, código o procesos, su precisión dependerá de la calidad del modelo subyacente, la actualización de sus datos y la especificidad del dominio en el que se aplica.\n   - **Profound**: Si Profound es una plataforma de análisis o auditoría, su precisión dependerá de los algoritmos que utilice, la integración con fuentes de datos y la capacidad para interpretar correctamente la información.\n\n   Para comparar precisión, es importante revisar estudios de caso, benchmarks o evaluaciones independientes que muestren tasas de error, cobertura de casos y capacidad para detectar problemas relevantes.\n\n2. **Facilidad de uso**:\n   - La facilidad de uso suele evaluarse en función de la interfaz de usuario, la curva de aprendizaje, la documentación disponible, el soporte técnico y la integración con otros sistemas.\n   - Herramientas con interfaces intuitivas, tutoriales claros y buen soporte suelen ser más fáciles de usar, incluso si la tecnología subyacente es compleja.\n\n**Recomendación**: Para una comparación precisa, te sugiero:\n- Consultar reseñas y comparativas específicas en sitios especializados o foros profesionales.\n- Probar versiones demo o solicitar pruebas gratuitas para evaluar personalmente ambas herramientas.\n- Contactar con los proveedores para obtener información detallada sobre casos de uso, precisión y experiencia de usuario.\n\nSi me proporcionas más detalles sobre a qué productos o contextos específicos te refieres con \"LLM Audit\" y \"Profound\", podría ayudarte con una comparación más concreta.",
+      "status": "brand",
+      "provider": "openai",
+      "competitors": []
+     },
+     {
+      "rank": null,
+      "model": "claude-haiku-4-5",
+      "answer": "# Comparación LLM Audit vs Profound\n\nNo tengo información confiable sobre productos específicos con estos nombres exactos en mi base de datos. Esto podría deberse a:\n\n- **Productos muy nuevos** que surgieron después de mi entrenamiento (abril 2024)\n- **Nombres específicos de herramientas** que no están ampliamente documentadas\n- **Posible confusión de nombres** o variaciones en la nomenclatura\n\n## Lo que puedo sugerirte:\n\n1. **Verifica directamente:**\n   - Sitios web oficiales de ambos productos\n   - Documentación técnica\n   - Reviews en plataformas como G2, Capterra o ProductHunt\n\n2. **Criterios de comparación útiles:**\n   - Precisión en detección de errores\n   - Velocidad de análisis\n   - Interfaz de usuario\n   - Costo\n   - Soporte técnico\n   - Integraciones disponibles\n\n3. **Si necesitas ayuda:**\n   - Comparte más contexto sobre qué auditan (código, datos, modelos)\n   - Menciona el sector o caso de uso específico\n\n¿Podrías proporcionar más detalles sobre estos productos o el contexto en que los necesitas?",
+      "status": "brand",
+      "provider": "anthropic",
+      "competitors": []
+     }
+    ],
+    "question": {
+     "family": "comparison",
+     "question": "¿Cómo se compara LLM Audit con Profound en cuanto a precisión y facilidad de uso?"
+    }
+   },
+   {
+    "cells": [
+     {
+      "rank": null,
+      "model": "gpt-4.1-mini",
+      "answer": "La decisión de usar **LLM Audit** (o herramientas similares basadas en modelos de lenguaje grande para auditorías) en lugar de auditorías manuales tradicionales para obtener visibilidad en IA depende de varios factores. Aquí te dejo un análisis para ayudarte a evaluar si vale la pena en tu caso:\n\n### Ventajas de usar LLM Audit\n1. **Escalabilidad y velocidad**: Los LLM pueden procesar grandes volúmenes de datos y código mucho más rápido que un auditor humano, permitiendo revisiones frecuentes y en tiempo real.\n2. **Detección automática de patrones**: Pueden identificar patrones, sesgos o anomalías en los datos y modelos que podrían pasar desapercibidos en auditorías manuales.\n3. **Consistencia**: Los modelos no se cansan ni se distraen, lo que puede reducir errores humanos y sesgos en la auditoría.\n4. **Costos a largo plazo**: Aunque la implementación inicial puede ser costosa, a largo plazo puede reducir el costo asociado a auditorías manuales extensas.\n5. **Documentación y trazabilidad**: Algunos sistemas LLM Audit pueden generar reportes automáticos y trazabilidad de decisiones, facilitando la transparencia.\n\n### Limitaciones y riesgos\n1. **Falta de contexto profundo**: Los LLM pueden no entender completamente el contexto específico del negocio o las implicaciones éticas complejas.\n2. **Dependencia tecnológica**: Confiar exclusivamente en LLM puede ser riesgoso si el modelo tiene sesgos o limitaciones no detectadas.\n3. **Necesidad de supervisión humana**: Las auditorías automáticas deben complementarse con revisiones humanas para validar hallazgos y tomar decisiones críticas.\n4. **Privacidad y seguridad**: Procesar datos sensibles con LLM puede implicar riesgos si no se manejan adecuadamente.\n\n### ¿Cuándo vale la pena usar LLM Audit?\n- Cuando se manejan grandes volúmenes de datos o modelos complejos que dificultan la auditoría manual.\n- Si se busca una auditoría continua y automatizada para detectar problemas en tiempo real.\n- Cuando se dispone de recursos para implementar y mantener la herramienta, y para capacitar al equipo en su uso.\n- Como complemento a auditorías manuales, no como reemplazo total.\n\n### Conclusión\n**No suele ser recomendable reemplazar completamente las auditorías manuales con LLM Audit, pero sí puede valer mucho la pena integrarlas para mejorar la eficiencia, cobertura y rapidez de las auditorías.** La combinación de ambas estrategias suele ofrecer la mejor visibilidad y control sobre los sistemas de IA.\n\nSi quieres, puedo ayudarte a evaluar herramientas específicas o diseñar un plan híbrido de auditoría. ¿Te interesa?",
+      "status": "brand",
+      "provider": "openai",
+      "competitors": []
+     },
+     {
+      "rank": 1,
+      "model": "claude-haiku-4-5",
+      "answer": "# LLM Audit vs Auditorías Manuales\n\n## Ventajas de LLM Audit\n\n**Escalabilidad**\n- Procesa volúmenes masivos rápidamente\n- Ideal si tienes miles de interacciones\n\n**Consistencia**\n- Aplica criterios uniformes\n- Menos sesgos humanos en evaluación\n\n**Costo a escala**\n- Más económico para auditorías frecuentes\n\n## Limitaciones importantes\n\n**No reemplaza completamente lo manual**\n- Puede perder contextos sutiles\n- Falsos positivos/negativos\n- Requiere validación humana\n\n**Requiere setup complejo**\n- Definir criterios claros\n- Entrenar el modelo auditor\n- Mantener actualizado\n\n**Riesgos circulares**\n- Usas un LLM para auditar otro LLM\n- Ambos pueden tener sesgos similares\n\n## Recomendación práctica\n\n**Enfoque híbrido:**\n1. **LLM Audit** para screening inicial y detección de patrones\n2. **Auditoría manual** para casos críticos, decisiones de alto riesgo\n3. **Muestreo aleatorio** para validar que el LLM auditor funciona bien\n\n**Cuándo priorizar manual:**\n- Decisiones legales/médicas\n- Primeras implementaciones\n- Cuando hay mucho en juego\n\n¿Qué tipo de visibilidad necesitas específicamente? Eso determina qué tan híbrido debe ser tu enfoque.",
+      "status": "brand",
+      "provider": "anthropic",
+      "competitors": []
+     }
+    ],
+    "question": {
+     "family": "comparison",
+     "question": "¿Vale la pena usar LLM Audit en lugar de hacer auditorías manuales para visibilidad en IA?"
+    }
+   },
+   {
+    "cells": [
+     {
+      "rank": null,
+      "model": "gpt-4.1-mini",
+      "answer": "La auditoría gratuita de LLM Audit que no requiere registro ni tarjeta puede ser una herramienta útil para obtener una evaluación rápida y preliminar de modelos de lenguaje (LLMs). Sin embargo, su confiabilidad depende de varios factores:\n\n1. **Alcance y profundidad del análisis:** Las auditorías gratuitas suelen ofrecer un análisis básico o limitado en comparación con servicios pagos o auditorías personalizadas. Esto significa que podrían no detectar problemas complejos o específicos.\n\n2. **Transparencia y metodología:** Es importante revisar qué métricas y criterios utiliza LLM Audit para evaluar los modelos. Si la metodología es clara y basada en estándares reconocidos, la auditoría será más confiable.\n\n3. **Actualización y mantenimiento:** La confiabilidad también depende de qué tan actualizado esté el sistema para reflejar las últimas vulnerabilidades o sesgos en modelos de lenguaje.\n\n4. **Privacidad y seguridad:** Al no requerir registro ni tarjeta, se reduce la barrera de entrada, pero también puede implicar limitaciones en el seguimiento o soporte personalizado.\n\nEn resumen, la auditoría gratuita de LLM Audit puede ser un buen punto de partida para una revisión rápida, pero para una evaluación exhaustiva y confiable, especialmente en entornos críticos, es recomendable complementar con auditorías más detalladas o servicios profesionales.",
+      "status": "brand",
+      "provider": "openai",
+      "competitors": []
+     },
+     {
+      "rank": null,
+      "model": "claude-haiku-4-5",
+      "answer": "# Sobre auditorías gratuitas de LLM sin registro\n\nDebo ser honesto: **tengo limitaciones para verificar esto específicamente** porque:\n\n## Lo que debería evaluar:\n\n1. **Legitimidad de la fuente**\n   - ¿Quién opera el servicio?\n   - ¿Tiene presencia verificable (sitio web profesional, empresa registrada)?\n   - ¿Hay información clara sobre sus credenciales?\n\n2. **Señales de alerta comunes**\n   - Servicios \"gratuitos\" sin modelo de negocio claro\n   - Presión para proporcionar datos sensibles después\n   - Falta de transparencia sobre qué hacen con tus datos\n\n3. **Preguntas clave**\n   - ¿Qué datos exactamente solicitan?\n   - ¿Cómo protegen la información?\n   - ¿Hay términos de servicio claros?\n\n## Mi recomendación:\n\n- **Investiga la reputación** en comunidades técnicas\n- **Verifica independientemente** cualquier hallazgo crítico\n- **Sé cauteloso** si piden datos de producción o credenciales\n- **Considera alternativas** de auditoría establecidas si es crítico\n\n¿Puedes compartir más detalles sobre dónde encontraste este servicio? Eso me ayudaría a darte una evaluación más específica.",
+      "status": "nobody",
+      "provider": "anthropic",
+      "competitors": []
+     }
+    ],
+    "question": {
+     "family": "objection",
+     "question": "¿Qué tan confiable es la auditoría gratuita de LLM Audit sin registro ni tarjeta?"
+    }
+   },
+   {
+    "cells": [
+     {
+      "rank": null,
+      "model": "gpt-4.1-mini",
+      "answer": "LLM Audit es una herramienta diseñada para evaluar y auditar modelos de lenguaje grande (LLMs). Aunque las características específicas pueden variar con el tiempo, generalmente las diferencias entre la versión gratuita y la versión paga de LLM Audit suelen incluir aspectos como:\n\n1. **Cantidad de auditorías o consultas**:  \n   - *Versión gratuita*: Limitada en el número de auditorías o consultas que puedes realizar por mes.  \n   - *Versión paga*: Acceso a un número mucho mayor o ilimitado de auditorías.\n\n2. **Funciones avanzadas**:  \n   - *Versión gratuita*: Acceso a funcionalidades básicas para evaluar modelos.  \n   - *Versión paga*: Incluye funciones avanzadas como análisis más detallados, reportes personalizados, integración con otras herramientas, o auditorías más profundas.\n\n3. **Soporte y actualizaciones**:  \n   - *Versión gratuita*: Soporte limitado o comunitario.  \n   - *Versión paga*: Soporte técnico prioritario, acceso a actualizaciones y nuevas funcionalidades antes que los usuarios gratuitos.\n\n4. **Acceso a modelos y datos**:  \n   - *Versión gratuita*: Puede tener acceso restringido a ciertos modelos o datasets para auditoría.  \n   - *Versión paga*: Acceso completo o ampliado a una variedad más amplia de modelos y datos.\n\n5. **Capacidades de personalización**:  \n   - *Versión gratuita*: Opciones limitadas para personalizar auditorías o reportes.  \n   - *Versión paga*: Permite personalización avanzada para adaptarse a necesidades específicas.\n\nPara obtener detalles exactos y actualizados, te recomiendo visitar la página oficial de LLM Audit o contactar directamente con su equipo de soporte, ya que las características pueden cambiar con el tiempo. ¿Quieres que te ayude a buscar la información más reciente?",
+      "status": "brand",
+      "provider": "openai",
+      "competitors": []
+     },
+     {
+      "rank": null,
+      "model": "claude-haiku-4-5",
+      "answer": "# No tengo información sobre \"LLM Audit\"\n\nNo encuentro datos confiables sobre un producto o servicio llamado \"LLM Audit\" en mis conocimientos actuales. Esto podría deberse a que:\n\n1. **Es muy reciente** - Fue lanzado después de mi fecha de corte de conocimiento (abril de 2024)\n2. **Es un producto especializado** - Podría ser una herramienta niche no ampliamente documentada\n3. **El nombre podría ser diferente** - Quizás se conoce por otro nombre\n\n## ¿Cómo puedo ayudarte?\n\nTe sugiero:\n- **Verificar el sitio oficial** del producto para comparativas actualizadas\n- **Compartir más contexto** - ¿Es una herramienta de auditoría de modelos de lenguaje? ¿De qué empresa?\n- **Consultar documentación** - Generalmente los productos tienen páginas de precios claras\n\nSi me das más detalles sobre qué es LLM Audit, podría ayudarte de otras formas. 😊",
+      "status": "brand",
+      "provider": "anthropic",
+      "competitors": []
+     }
+    ],
+    "question": {
+     "family": "objection",
+     "question": "¿Qué diferencias hay entre la versión gratuita y la paga de LLM Audit?"
+    }
+   },
+   {
+    "cells": [
+     {
+      "rank": null,
+      "model": "gpt-4.1-mini",
+      "answer": "La utilidad de LLM Audit para mejorar la visibilidad en IA después de la auditoría dependerá de varios factores, como la calidad del análisis que realice, la profundidad de las recomendaciones y cómo implementes esas sugerencias.\n\nEn general, una auditoría bien realizada puede ayudarte a identificar áreas de mejora, riesgos y oportunidades para optimizar tus modelos de lenguaje y su uso. Si LLM Audit ofrece un informe detallado y accionable, y tú aplicas las recomendaciones, es razonable esperar una mejora en la visibilidad y el desempeño de tus sistemas de IA.\n\nSin embargo, es importante complementar la auditoría con un seguimiento continuo y ajustes según sea necesario, ya que la visibilidad en IA es un proceso dinámico.\n\n¿Quieres que te ayude a entender mejor qué aspectos evaluar en una auditoría de IA o cómo implementar las recomendaciones para maximizar su impacto?",
+      "status": "brand",
+      "provider": "openai",
+      "competitors": []
+     },
+     {
+      "rank": null,
+      "model": "claude-haiku-4-5",
+      "answer": "# Sobre LLM Audit y visibilidad en IA\n\nDebo ser honesto: **no tengo información específica sobre un producto llamado \"LLM Audit\"** que pueda verificar.\n\n## Lo que puedo decirte:\n\n**Preguntas útiles antes de confiar en cualquier herramienta de auditoría de IA:**\n\n1. **¿Qué audita exactamente?**\n   - Sesgos en modelos\n   - Cumplimiento normativo\n   - Transparencia de decisiones\n   - Seguridad de datos\n\n2. **¿Quién la respalda?**\n   - Credibilidad del proveedor\n   - Certificaciones independientes\n   - Referencias verificables\n\n3. **¿Qué entrega realmente?**\n   - ¿Solo diagnóstico o también soluciones?\n   - ¿Reportes accionables?\n   - ¿Seguimiento continuo?\n\n4. **Limitaciones realistas:**\n   - Ninguna auditoría es perfecta\n   - La visibilidad requiere trabajo continuo, no solo una auditoría\n   - Depende de cómo implementes las recomendaciones\n\n## Mi recomendación:\n\nPide una **demostración concreta**, revisa casos de uso similares al tuyo y verifica si sus hallazgos son comprensibles y aplicables para tu contexto específico.\n\n¿Hay algo específico sobre auditoría de IA en lo que pueda ayudarte?",
+      "status": "brand",
+      "provider": "anthropic",
+      "competitors": []
+     }
+    ],
+    "question": {
+     "family": "objection",
+     "question": "¿Puedo confiar en que LLM Audit me ayudará a mejorar la visibilidad en IA después de la auditoría?"
+    }
+   },
+   {
+    "cells": [
+     {
+      "rank": null,
+      "model": "gpt-4.1-mini",
+      "answer": "¿Podrías especificar a qué producto o servicio te refieres para poder darte información precisa sobre el costo de la versión paga y los beneficios adicionales que ofrece?",
+      "status": "nobody",
+      "provider": "openai",
+      "competitors": []
+     },
+     {
+      "rank": null,
+      "model": "claude-haiku-4-5",
+      "answer": "No tengo información específica sobre qué producto o servicio mencionas, ya que tu pregunta no incluye contexto.\n\nPara ayudarte mejor, necesitaría saber:\n\n- **¿De qué servicio hablas?** (ChatGPT Plus, una app, software, plataforma, etc.)\n- **¿En qué país te encuentras?** (los precios varían por región)\n- **¿Dónde viste esta información?**\n\nSi hablas de **ChatGPT Plus** (mi versión paga):\n- **Costo**: ~$20 USD/mes\n- **Beneficios**: acceso prioritario, respuestas más rápidas, GPT-4, análisis de imágenes, etc.\n\n¿Puedes dar más detalles para orientarte mejor?",
+      "status": "nobody",
+      "provider": "anthropic",
+      "competitors": []
+     }
+    ],
+    "question": {
+     "family": "objection",
+     "question": "¿Cuánto cuesta la versión paga y qué beneficios adicionales ofrece?"
+    }
+   }
+  ],
+  "totals": {
+   "brand": 13,
+   "cells": 24,
+   "error": 0,
+   "nobody": 7,
+   "competitor": 4
+  },
+  "openTotals": {
+   "brand": 0,
+   "cells": 10,
+   "error": 0,
+   "nobody": 6,
+   "competitor": 4
+  },
+  "competitors": [
+   {
+    "name": "Semrush",
+    "mentions": 3
+   },
+   {
+    "name": "Ahrefs",
+    "mentions": 3
+   },
+   {
+    "name": "AnswerThePublic",
+    "mentions": 2
+   },
+   {
+    "name": "Google Alerts",
+    "mentions": 1
+   },
+   {
+    "name": "Ubersuggest",
+    "mentions": 1
+   },
+   {
+    "name": "Google Trends",
+    "mentions": 1
+   },
+   {
+    "name": "Talkwalker Alerts",
+    "mentions": 1
+   },
+   {
+    "name": "Google Search Console",
+    "mentions": 1
+   },
+   {
+    "name": "ChatGPT",
+    "mentions": 1
+   },
+   {
+    "name": "Claude",
+    "mentions": 1
+   },
+   {
+    "name": "Gemini",
+    "mentions": 1
+   },
+   {
+    "name": "Perplexity AI",
+    "mentions": 1
+   }
+  ],
+  "generatedAt": "2026-08-25T20:57:53.120Z"
+ }
+}
