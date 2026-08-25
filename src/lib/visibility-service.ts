@@ -50,6 +50,19 @@ export type QuotaBlockedResult = {
   upgrade: { fullReportUsd: number; lifetimeUsd: number; url: string };
 };
 
+// El audit gratis NO genera preguntas del comprador cuando el crawl del sitio
+// no da material (product-fanout.ts: `categoryOnly && !allowCategoryOnly`).
+// Sin preguntas no hay mapa, y sin mapa el poll se quedaria en "running" para
+// siempre: /api/audit/:id/fanout-map contesta no_fanout al POST y el GET
+// devuelve map en null, que es indistinguible de "todavia no termino".
+// Detectarlo al arrancar es lo unico que le da al agente algo que hacer, y
+// libera la cuota del dominio, que si no se consumiria sin haber medido nada.
+export type NotMeasurableResult = {
+  status: "not_measurable";
+  domain: string;
+  message: string;
+};
+
 export type BudgetBlockedResult = {
   status: "channel_budget_reached";
   message: string;
@@ -101,7 +114,9 @@ export class VisibilityService {
     this.clientId = options.clientId ?? "anon";
   }
 
-  async start(input: StartVisibilityInput): Promise<StartVisibilityResult | QuotaBlockedResult | BudgetBlockedResult> {
+  async start(
+    input: StartVisibilityInput,
+  ): Promise<StartVisibilityResult | QuotaBlockedResult | BudgetBlockedResult | NotMeasurableResult> {
     const domain = normalizeDomain(input.website);
 
     // La cuota se chequea ANTES de llamar a /api/audit: un servidor MCP publico
@@ -152,6 +167,15 @@ export class VisibilityService {
       throw error;
     }
 
+    if (!hasBuyerQuestions(audit)) {
+      await this.store.release(runId);
+      return {
+        status: "not_measurable",
+        domain,
+        message: `llmaudit could not read enough of ${domain} to build the buyer questions, so there is nothing to measure. This usually means the site blocks crawlers or returns an error to them. No free measurement was used up.`,
+      };
+    }
+
     await this.store.attachAudit(runId, audit.id, audit);
     void this.client.startFanoutMap(audit.id).catch(() => undefined);
 
@@ -189,6 +213,11 @@ export class VisibilityService {
   private ready(audit: AuditResponse, map: FanoutMap, run: { brand: string; website: string }): VisibilityReadyResult {
     return mapVisibilityResult(audit, map, { brand: run.brand, website: run.website });
   }
+}
+
+function hasBuyerQuestions(audit: AuditResponse): boolean {
+  const fanout = (audit as { productFanout?: { questions?: unknown[] } | null }).productFanout;
+  return Array.isArray(fanout?.questions) && fanout.questions.length > 0;
 }
 
 const UPGRADE = { fullReportUsd: 9, lifetimeUsd: 29.99, url: "https://llmaudit.app/pricing" };

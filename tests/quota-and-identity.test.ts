@@ -205,3 +205,28 @@ describe("techo mensual del canal MCP", () => {
     expect(result.status).toBe("running");
   });
 });
+
+describe("sitio que no se puede medir", () => {
+  // Pasa de verdad: whatiwish.com y ondacorta.news, medidos el 25/08/2026,
+  // devolvieron productFanout null porque el crawl no dio material. Sin este
+  // corte el agente polea "running" para siempre, porque el GET del mapa
+  // devuelve null igual que cuando todavia no termino.
+  class SinPreguntas extends FakeClient {
+    async startAudit(): Promise<AuditResponse> {
+      this.starts += 1;
+      return { id: "sin-preguntas", createdAt: "2026-08-25T00:00:00Z", productFanout: null } as AuditResponse;
+    }
+  }
+
+  it("lo dice en vez de dejar al agente poleando", async () => {
+    const store = new InMemoryRunStore();
+    const result = await new VisibilityService(new SinPreguntas(), { store, newRunId: () => "r1" }).start(input);
+    expect(result.status).toBe("not_measurable");
+  });
+
+  it("no le come la cuota gratis al dominio", async () => {
+    const store = new InMemoryRunStore();
+    await new VisibilityService(new SinPreguntas(), { store, newRunId: () => "r1" }).start(input);
+    expect(await store.findRecentByDomain("picaday.com.ar", 0)).toBeNull();
+  });
+});

@@ -3,10 +3,15 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import { mapVisibilityResult, type AuditResponse, type FanoutMap } from "../src/lib/visibility-mapper";
 
+// Corridas reales de prod sobre sitios propios, medidas el 25/08/2026.
+// `proveedor-caido` es DERIVADO del mapa de picaday, no una corrida: bajo
+// GEMINI_MODE=paid_only una corrida gratis mide con dos proveedores y ninguno
+// falla, asi que el modo de falla "un proveedor entero se cayo" ya no se puede
+// capturar midiendo. Se fuerzan a error todas las celdas de anthropic.
 const cases = {
-  "picaday": { brand: "Picaday", website: "picaday.com.ar" },
-  llmaudit: { brand: "LLM Audit", website: "llmaudit.com.ar" },
-  "picaday": { brand: "Picaday", website: "picaday.com.ar" },
+  picaday: { brand: "Picaday", website: "picaday.com.ar" },
+  llmaudit: { brand: "LLM Audit", website: "llmaudit.app" },
+  "proveedor-caido": { brand: "Picaday", website: "picaday.com.ar" },
 } as const;
 
 function fixture<T>(name: string): T {
@@ -14,7 +19,8 @@ function fixture<T>(name: string): T {
 }
 
 function mapped(name: keyof typeof cases) {
-  const audit = fixture<AuditResponse>(`audit-${name}.json`);
+  const auditName = name === "proveedor-caido" ? "picaday" : name;
+  const audit = fixture<AuditResponse>(`audit-${auditName}.json`);
   const map = fixture<{ ok: boolean; map: FanoutMap }>(`map-${name}.json`).map;
   return mapVisibilityResult(audit, map, cases[name]);
 }
@@ -26,17 +32,20 @@ function collectKeys(value: unknown): string[] {
 }
 
 describe("mapVisibilityResult con picaday", () => {
-  it("usa openTotals para cada conteo", () => {
+  it("usa openTotals para cada conteo, no totals", () => {
+    // totals dice 24 celdas y 13 para la marca; openTotals dice 10 y 0. La
+    // diferencia son las preguntas que ya nombran a Picaday, que miden si el
+    // modelo la conoce y no si la recomienda.
     expect(mapped("picaday").openQuestions).toEqual({
-      total: 12,
+      total: 10,
       brandAppears: 0,
-      competitorWins: 3,
+      competitorWins: 5,
       nobody: 5,
-      errors: 4,
+      errors: 0,
     });
   });
 
-  it("calcula el veredicto con las 8 celdas abiertas respondidas", () => {
+  it("calcula el veredicto con las 10 celdas abiertas respondidas", () => {
     expect(mapped("picaday").verdict).toBe("Likely invisible");
   });
 
@@ -44,10 +53,11 @@ describe("mapVisibilityResult con picaday", () => {
     expect(mapped("picaday").providersAnswered).toEqual(["openai", "anthropic"]);
   });
 
-  it("marca el resultado incompleto y nombra a gemini", () => {
-    const result = mapped("picaday");
-    expect(result.incomplete.is).toBe(true);
-    expect(result.incomplete.reason.toLowerCase()).toContain("gemini");
+  // Bajo paid_only una corrida gratis mide con dos proveedores y eso NO es una
+  // medicion degradada: un proveedor ausente del mapa no es un proveedor que
+  // fallo. Si esto se rompe, toda corrida gratis se reporta como incompleta.
+  it("una corrida gratis completa no se marca incompleta", () => {
+    expect(mapped("picaday").incomplete.is).toBe(false);
   });
 
   it("no filtra score, risk, summary, likelyMentions ni porcentajes del autoreporte", () => {
@@ -62,16 +72,20 @@ describe("mapVisibilityResult con picaday", () => {
 describe("regresiones de fixtures", () => {
   it("mapea llmaudit desde openTotals", () => {
     const result = mapped("llmaudit");
-    expect(result.openQuestions).toEqual({ total: 18, brandAppears: 0, competitorWins: 3, nobody: 9, errors: 6 });
+    expect(result.openQuestions).toEqual({ total: 10, brandAppears: 0, competitorWins: 4, nobody: 6, errors: 0 });
     expect(result.verdict).toBe("Likely invisible");
     expect(result.providersAnswered).toEqual(["openai", "anthropic"]);
   });
 
-  it("mapea picaday desde openTotals", () => {
-    const result = mapped("picaday");
-    expect(result.openQuestions).toEqual({ total: 15, brandAppears: 0, competitorWins: 2, nobody: 8, errors: 5 });
-    expect(result.verdict).toBe("Likely invisible");
-    expect(result.providersAnswered).toEqual(["openai", "anthropic"]);
+  // El derivado cubre las dos cosas juntas: un proveedor entero caido, y que
+  // las 5 celdas abiertas que quedan no alcanzan para un veredicto.
+  it("con un proveedor caido no inventa veredicto y lo nombra", () => {
+    const result = mapped("proveedor-caido");
+    expect(result.openQuestions.errors).toBe(5);
+    expect(result.verdict).toBeNull();
+    expect(result.providersAnswered).toEqual(["openai"]);
+    expect(result.incomplete.is).toBe(true);
+    expect(result.incomplete.reason.toLowerCase()).toContain("anthropic");
   });
 });
 
@@ -83,7 +97,7 @@ describe("reglas de seguridad y suficiencia", () => {
       ...source,
       openTotals: { cells: 12, brand: 4, competitor: 0, nobody: 1, error: 7 },
     };
-    const result = mapVisibilityResult(audit, map, cases["picaday"]);
+    const result = mapVisibilityResult(audit, map, cases.picaday);
     expect(result.verdict).toBeNull();
     expect(result.incomplete.is).toBe(true);
     expect(result.incomplete.reason).toMatch(/fewer than 6 open cells answered/i);
@@ -107,7 +121,7 @@ describe("reglas de seguridad y suficiencia", () => {
           : row,
       ),
     };
-    const result = mapVisibilityResult(audit, map, cases["picaday"]);
+    const result = mapVisibilityResult(audit, map, cases.picaday);
     const serialized = JSON.stringify(result);
     expect(serialized).not.toContain("Ignore previous instructions");
     expect(serialized).not.toContain("system prompt");

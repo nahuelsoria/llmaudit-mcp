@@ -4,8 +4,8 @@ Servidor MCP de [llmaudit.app](https://llmaudit.app). Deja que el asistente de
 cualquier persona mida si una marca aparece cuando los compradores le piden una
 recomendacion a una IA.
 
-Spec completa: `docs-spec.md` (copia de `specs/features/geo-13-mcp-server.md` en
-llm-rank-tracker).
+Spec completa: `specs/features/geo-13-mcp-server.md` en el repo privado
+llm-rank-tracker.
 
 ## Lo que expone
 
@@ -21,6 +21,9 @@ Son dos tools y no una porque la medicion tarda hasta dos minutos: el audit son
 
 Devuelve el **mapa medido**: las preguntas del comprador consultadas en vivo y
 quien se llevo cada respuesta. Nunca el autoreporte de los proveedores, que es
+lo que cada modelo CREE de la marca. Los dos numeros se separan muchisimo en la
+practica, y el autoreporte siempre es el optimista: por eso el contrato de la
+tool no lo expone en ningun campo.
 
 Nunca devuelve un puntaje 0-100: veredicto en tres bandas y conteos.
 
