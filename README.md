@@ -47,6 +47,30 @@ Cada medicion gratis gasta las API keys de llmaudit, del orden de USD 0,05 a
 | `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` | Tabla `mcp_runs`. Sin ellas el store es en memoria y NO sirve en serverless |
 | `MCP_MONTHLY_RUN_LIMIT` | Techo mensual de corridas del canal |
 
+## Uso del canal
+
+`npm run stats` lee `mcp_runs` y dice cuanto queda del techo del mes, quien
+llamo, que dominios se midieron y cual tiene tomada la cuota de 30 dias.
+
+```sh
+node --env-file <archivo.env> scripts/stats.mjs
+node --env-file <archivo.env> scripts/stats.mjs --days 30 --history 180
+```
+
+Necesita `SUPABASE_URL` (o `NEXT_PUBLIC_SUPABASE_URL`) y
+`SUPABASE_SERVICE_ROLE_KEY`. `--days` es el detalle diario, `--history` cuanto
+pasado trae; el mes en curso siempre entra completo, porque ese numero tiene que
+dar igual que el del guard.
+
+Lo primero que imprime, cuando aparece, son las corridas **huerfanas**: filas
+reservadas que nunca engancharon su `audit_id`. Le tiran "Unknown runId" al
+cliente para siempre y mientras tanto ocupan la cuota gratis de su dominio y
+suman al techo del mes. Se borran por `run_id`.
+
+Vercel Web Analytics no sirve para medir esto: mide inyectando un script en el
+HTML, y aca no hay HTML ni navegador que lo corra, cada request es un JSON-RPC
+de un cliente MCP. Marcaria cero para siempre.
+
 ## Desarrollo
 
 ```sh

@@ -9,6 +9,7 @@
     "build": "xmcp build",
     "dev": "xmcp dev",
     "start": "node dist/http.js",
+    "stats": "node scripts/stats.mjs",
     "test": "vitest run"
   },
   "dependencies": {
