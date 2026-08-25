@@ -4,7 +4,9 @@ const config: XmcpConfig = {
   http: true,
   paths: {
     tools: "./src/tools",
-    prompts: "./src/prompts",
+    // false y no una ruta: no hay prompts, y git no versiona directorios
+    // vacios, asi que apuntar a ./src/prompts buildea local y falla en Vercel.
+    prompts: false,
     resources: "./src/resources",
   },
   // Lo que ve CUALQUIER cliente que se conecte. El default del scaffold decia
