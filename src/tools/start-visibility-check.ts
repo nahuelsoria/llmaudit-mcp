@@ -15,7 +15,8 @@ export const schema = {
 
 export const metadata: ToolMetadata = {
   name: "start_visibility_check",
-  description: "Start a measured check of where a brand appears in buyer questions answered by leading AI providers.",
+  description:
+    "Measure whether a brand shows up when buyers ask AI assistants for a recommendation. Asks real buyer questions to OpenAI, Anthropic and Gemini and reports what they answered, not what they claim they would answer. Free, no signup, one measurement per domain every 30 days. Returns a runId: call get_visibility_check with it after about a minute. If the domain was already measured this month the response says quota_reached and includes when it ran.",
   annotations: {
     title: "Start visibility check",
     readOnlyHint: false,

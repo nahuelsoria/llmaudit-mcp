@@ -129,3 +129,40 @@ describe("headers que manda el cliente HTTP", () => {
     expect(sent["x-llmaudit-client-id"]).toBeUndefined();
   });
 });
+
+describe("errores que lee el agente que llama", () => {
+  afterEach(() => vi.unstubAllGlobals());
+
+  function respondWith(status: number) {
+    vi.stubGlobal("fetch", async () => new Response("{}", { status }));
+    return new HttpAuditClient("https://example.test", "c");
+  }
+
+  // Un "HTTP 429" pelado no le dice al agente si reintentar o rendirse.
+  it("traduce 429 a algo accionable", async () => {
+    await expect(respondWith(429).startAudit({ brand: "a", website: "b", category: "c" })).rejects.toThrow(
+      /rate limiting.*wait/i,
+    );
+  });
+
+  it("traduce 503 a que no se aceptan mediciones ahora", async () => {
+    await expect(respondWith(503).startAudit({ brand: "a", website: "b", category: "c" })).rejects.toThrow(
+      /not accepting free measurements/i,
+    );
+  });
+
+  it("no filtra el detalle crudo de un 500", async () => {
+    await expect(respondWith(500).startAudit({ brand: "a", website: "b", category: "c" })).rejects.toThrow(
+      /internal error/i,
+    );
+  });
+
+  it("una red caida no explota con el error crudo de fetch", async () => {
+    vi.stubGlobal("fetch", async () => {
+      throw new Error("ECONNREFUSED 127.0.0.1:443");
+    });
+    await expect(
+      new HttpAuditClient("https://example.test", "c").startAudit({ brand: "a", website: "b", category: "c" }),
+    ).rejects.toThrow(/could not reach llmaudit/i);
+  });
+});

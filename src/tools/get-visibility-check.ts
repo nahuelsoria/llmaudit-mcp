@@ -10,7 +10,8 @@ export const schema = {
 
 export const metadata: ToolMetadata = {
   name: "get_visibility_check",
-  description: "Get the measured visibility result for a check that has already started. Poll until the result is ready.",
+  description:
+    "Collect the result of a measurement started with start_visibility_check. Returns status running while the providers are still answering, so poll every 20 to 30 seconds. When ready it reports a verdict, how many of the buyer questions the brand won, which competitors were named instead, and which providers actually answered.",
   annotations: {
     title: "Get visibility check",
     readOnlyHint: true,

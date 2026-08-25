@@ -17,6 +17,18 @@ function cleanAuditPayload(payload: Record<string, unknown>): Record<string, unk
   return Object.fromEntries(AUDIT_FIELDS.flatMap((key) => (payload[key] === undefined ? [] : [[key, payload[key]]])));
 }
 
+const REQUEST_TIMEOUT_MS = 90_000;
+
+// Lo que sale por aca lo lee un agente que tiene que decidir si reintentar o
+// rendirse, asi que un "HTTP 429" pelado no alcanza.
+function errorFor(status: number): string {
+  if (status === 429) return "llmaudit is rate limiting this client. Wait a few minutes before measuring again.";
+  if (status === 404) return "That measurement does not exist on llmaudit.";
+  if (status === 503) return "llmaudit is not accepting free measurements right now. Try again later.";
+  if (status >= 500) return "llmaudit had an internal error. Try again in a minute.";
+  return `llmaudit rejected the request (HTTP ${status}).`;
+}
+
 export class HttpAuditClient implements AuditClient {
   private readonly baseUrl: string;
   private readonly clientId: string;
@@ -63,9 +75,23 @@ export class HttpAuditClient implements AuditClient {
     return payload.map ? { status: "ready", map: payload.map } : { status: "running" };
   }
 
+  // El audit tarda entre 15 y 60s y el mapa otro tanto, pero un proveedor
+  // colgado no puede colgar la tool del otro lado para siempre: sin timeout el
+  // agente que llama se queda esperando sin nada que mostrar ni que reintentar.
   private async request<T>(path: string, init: RequestInit): Promise<T> {
-    const response = await fetch(`${this.baseUrl}${path}`, init);
-    if (!response.ok) throw new Error(`llmaudit request failed with HTTP ${response.status}`);
+    let response: Response;
+    try {
+      response = await fetch(`${this.baseUrl}${path}`, { ...init, signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) });
+    } catch (error) {
+      if (error instanceof Error && error.name === "TimeoutError") {
+        throw new Error("llmaudit took too long to answer. Try again in a minute.");
+      }
+      throw new Error("Could not reach llmaudit. Try again in a minute.");
+    }
+
+    if (!response.ok) {
+      throw new Error(errorFor(response.status));
+    }
     return (await response.json()) as T;
   }
 }
