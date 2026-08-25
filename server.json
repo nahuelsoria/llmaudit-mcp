@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "app.llmaudit/llmaudit",
+  "title": "LLM Audit",
+  "description": "Measure whether AI assistants actually recommend a brand, from measured answers.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/nahuelsoria/llmaudit-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://llmaudit.app",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.llmaudit.app/mcp"
+    }
+  ]
+}
