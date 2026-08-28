@@ -64,6 +64,10 @@ The first thing it prints, when there are any, is the **orphaned** runs: reserve
 
 Vercel Web Analytics cannot measure this: it works by injecting a script into HTML, and here there is no HTML and no browser to run it, every request is a JSON-RPC call from an MCP client. It would read zero forever.
 
+## Docker (directory checks)
+
+`Dockerfile` builds the HTTP server and serves it on `0.0.0.0:3001`, which is what Glama and similar directories run to verify the server starts and answers introspection. Port and host are read by `xmcp.config.ts` at build time, so they go as `ENV` before `npm run build`, not at `docker run`. Without `SUPABASE_*` the run store is in memory: fine for a check, not for serving traffic.
+
 ## Development
 
 ```sh

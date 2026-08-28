@@ -1,7 +1,14 @@
 import { type XmcpConfig } from "xmcp";
 
 const config: XmcpConfig = {
-  http: true,
+  // Puerto y host se fijan al BUILD (xmcp evalua este archivo al compilar):
+  // en Vercel no importan, y la imagen Docker de los directorios los pone en
+  // 0.0.0.0:3001 con ENV antes de `npm run build`, si no el container escucha
+  // en loopback y nadie lo alcanza. El default sigue siendo local.
+  http: {
+    port: Number(process.env.PORT) || 3001,
+    host: process.env.HOST || "127.0.0.1",
+  },
   paths: {
     tools: "./src/tools",
     // false y no una ruta: no hay prompts, y git no versiona directorios
