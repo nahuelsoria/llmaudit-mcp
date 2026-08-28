@@ -1,83 +1,87 @@
 # llmaudit-mcp
 
-Servidor MCP de [llmaudit.app](https://llmaudit.app). Deja que el asistente de
-cualquier persona mida si una marca aparece cuando los compradores le piden una
-recomendacion a una IA.
+MCP server for [llmaudit.app](https://llmaudit.app). Lets anyone's assistant measure whether a brand shows up when buyers ask an AI for a recommendation.
 
-Spec completa: `specs/features/geo-13-mcp-server.md` en el repo privado
-llm-rank-tracker.
+Hosted at `https://mcp.llmaudit.app/mcp` (streamable HTTP). Listed in the [official MCP registry](https://registry.modelcontextprotocol.io) as `app.llmaudit/llmaudit`. The stdio bridge for clients that only launch local commands is the npm package [`llmaudit-mcp`](https://www.npmjs.com/package/llmaudit-mcp), in [`npm/`](npm/).
 
-## Lo que expone
+Full spec: `specs/features/geo-13-mcp-server.md` in the private llm-rank-tracker repo.
 
-- `start_visibility_check` arranca la medicion y devuelve un `runId`.
-- `get_visibility_check` la cobra. Devuelve `running` hasta que los proveedores
-  contestan.
-- `llmaudit://methodology` explica como se mide.
+## Install
 
-Son dos tools y no una porque la medicion tarda hasta dos minutos: el audit son
-15 a 60s y el mapa medido otro tanto.
+```json
+{"mcpServers":{"llmaudit":{"url":"https://mcp.llmaudit.app/mcp"}}}
+```
 
-## Lo que devuelve, y lo que NO
+or, for command-only clients:
 
-Devuelve el **mapa medido**: las preguntas del comprador consultadas en vivo y
-quien se llevo cada respuesta. Nunca el autoreporte de los proveedores, que es
-lo que cada modelo CREE de la marca. Los dos numeros se separan muchisimo en la
-practica, y el autoreporte siempre es el optimista: por eso el contrato de la
-tool no lo expone en ningun campo.
+```json
+{"mcpServers":{"llmaudit":{"command":"npx","args":["-y","llmaudit-mcp"]}}}
+```
 
-Nunca devuelve un puntaje 0-100: veredicto en tres bandas y conteos.
+## What it exposes
 
-## Plata
+- `start_visibility_check` starts the measurement and returns a `runId`.
+- `get_visibility_check` collects it. Returns `running` until the providers answer.
+- `llmaudit://methodology` explains how it is measured.
 
-Cada medicion gratis gasta las API keys de llmaudit, del orden de USD 0,05 a
-0,15. Tres guardas, todas verificadas por tests:
+Two tools rather than one because a measurement takes up to two minutes: the audit is 15 to 60 s and the measured map another 15 to 60 s.
 
-1. Una medicion gratis por dominio cada 30 dias, chequeada ANTES de llamar a la API.
-2. `MCP_MONTHLY_RUN_LIMIT` (default 200) como techo del canal, separado del
-   presupuesto del funnel web.
-3. El conteo de rate limit en prod va por identidad de cliente, no por la IP de
-   este servidor, que en serverless rota.
+## What it returns, and what it does not
+
+It returns the **measured map**: the buyer questions that were asked live and who won each answer. Never the providers' self-report, which is what each model *believes* about the brand. The two numbers drift apart a lot in practice, and the self-report is always the optimistic one; that is why the tool contract does not expose it in any field.
+
+It never returns a 0 to 100 score: a verdict in three bands and counts.
+
+## Money
+
+Every free measurement spends llmaudit's API keys, on the order of USD 0.05 to 0.15. Three guards, all covered by tests:
+
+1. One free measurement per domain every 30 days, checked BEFORE the API is called.
+2. `MCP_MONTHLY_RUN_LIMIT` (default 200) as the channel ceiling, separate from the web funnel budget.
+3. Rate limiting in prod counts by client identity, not by this server's IP, which rotates on serverless.
 
 ## Env
 
-| Variable | Para que |
+| Variable | Purpose |
 | --- | --- |
-| `LLMAUDIT_API_BASE_URL` | Base de la API. Default `https://llmaudit.app` |
-| `MCP_SERVER_KEY` | Llave compartida con llm-rank-tracker. Sin ella prod bucketea por IP |
-| `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` | Tabla `mcp_runs`. Sin ellas el store es en memoria y NO sirve en serverless |
-| `MCP_MONTHLY_RUN_LIMIT` | Techo mensual de corridas del canal |
+| `LLMAUDIT_API_BASE_URL` | API base. Default `https://llmaudit.app` |
+| `MCP_SERVER_KEY` | Key shared with llm-rank-tracker. Without it prod buckets by IP |
+| `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` | `mcp_runs` table. Without them the store is in memory and does NOT work on serverless |
+| `MCP_MONTHLY_RUN_LIMIT` | Monthly ceiling of runs for the channel |
 
-## Uso del canal
+## Channel usage
 
-`npm run stats` lee `mcp_runs` y dice cuanto queda del techo del mes, quien
-llamo, que dominios se midieron y cual tiene tomada la cuota de 30 dias.
+`npm run stats` reads `mcp_runs` and reports how much of the monthly ceiling is left, who called, which domains were measured and which one currently holds the 30-day quota.
 
 ```sh
-node --env-file <archivo.env> scripts/stats.mjs
-node --env-file <archivo.env> scripts/stats.mjs --days 30 --history 180
+node --env-file <file.env> scripts/stats.mjs
+node --env-file <file.env> scripts/stats.mjs --days 30 --history 180
 ```
 
-Necesita `SUPABASE_URL` (o `NEXT_PUBLIC_SUPABASE_URL`) y
-`SUPABASE_SERVICE_ROLE_KEY`. `--days` es el detalle diario, `--history` cuanto
-pasado trae; el mes en curso siempre entra completo, porque ese numero tiene que
-dar igual que el del guard.
+Needs `SUPABASE_URL` (or `NEXT_PUBLIC_SUPABASE_URL`) and `SUPABASE_SERVICE_ROLE_KEY`. `--days` is the daily detail, `--history` how far back it looks; the current month is always included in full, because that number has to match the guard's.
 
-Lo primero que imprime, cuando aparece, son las corridas **huerfanas**: filas
-reservadas que nunca engancharon su `audit_id`. Le tiran "Unknown runId" al
-cliente para siempre y mientras tanto ocupan la cuota gratis de su dominio y
-suman al techo del mes. Se borran por `run_id`.
+The first thing it prints, when there are any, is the **orphaned** runs: reserved rows that never got their `audit_id`. They return "Unknown runId" to the client forever while holding their domain's free quota and counting against the monthly ceiling. Delete them by `run_id`.
 
-Vercel Web Analytics no sirve para medir esto: mide inyectando un script en el
-HTML, y aca no hay HTML ni navegador que lo corra, cada request es un JSON-RPC
-de un cliente MCP. Marcaria cero para siempre.
+Vercel Web Analytics cannot measure this: it works by injecting a script into HTML, and here there is no HTML and no browser to run it, every request is a JSON-RPC call from an MCP client. It would read zero forever.
 
-## Desarrollo
+## Development
 
 ```sh
 npm run dev     # xmcp dev
-npm test        # vitest, sin red
+npm test        # vitest, no network
 npm run build   # xmcp build
 ```
 
-Los tests corren contra fixtures reales en `fixtures/` (corridas ya pagadas de
-la prospeccion). Ninguno sale a la red ni llama a un proveedor.
+Tests run against real fixtures in `fixtures/` (already-paid runs from prospecting). None of them touch the network or call a provider.
+
+## Publishing a new registry version
+
+`server.json` is published with `mcp-publisher` using DNS auth on `llmaudit.app`. The key lives outside the repo as a PEM; the CLI wants the raw ed25519 seed in hex:
+
+```sh
+HEX=$(openssl pkey -in <key.pem> -noout -text | sed -n '/^priv:/,/^pub:/p' | grep -v '^priv:\|^pub:' | tr -d ' :\n')
+mcp-publisher login dns --domain llmaudit.app --private-key "$HEX"
+mcp-publisher publish server.json
+```
+
+Bump `version` in `server.json` on every publish; the registry rejects a repeat. When the npm package changes version, update `packages[0].version` too.
