@@ -3,7 +3,7 @@
   "name": "app.llmaudit/llmaudit",
   "title": "LLM Audit",
   "description": "Measure whether AI assistants actually recommend a brand, from measured answers.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "repository": {
     "url": "https://github.com/nahuelsoria/llmaudit-mcp",
     "source": "github"
@@ -13,6 +13,17 @@
     {
       "type": "streamable-http",
       "url": "https://mcp.llmaudit.app/mcp"
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "llmaudit-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      }
     }
   ]
 }

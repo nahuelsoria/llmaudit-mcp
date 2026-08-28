@@ -1,0 +1,44 @@
+{
+  "name": "llmaudit-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for llmaudit.app: measure whether AI assistants actually recommend a brand. stdio bridge to the hosted server, for clients that launch local commands.",
+  "mcpName": "app.llmaudit/llmaudit",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "llmaudit-mcp": "bin/llmaudit-mcp.js"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "mcp-remote": "0.8.1"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "ai-visibility",
+    "geo",
+    "generative-engine-optimization",
+    "brand-monitoring",
+    "llm",
+    "chatgpt",
+    "claude"
+  ],
+  "homepage": "https://llmaudit.app/developers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nahuelsoria/llmaudit-mcp.git",
+    "directory": "npm"
+  },
+  "bugs": {
+    "url": "https://github.com/nahuelsoria/llmaudit-mcp/issues"
+  },
+  "author": "Nahuel Soria"
+}
