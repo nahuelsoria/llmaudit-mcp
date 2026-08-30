@@ -115,8 +115,8 @@ describe("headers que manda el cliente HTTP", () => {
     const calls = capture();
     await new HttpAuditClient("https://example.test", "cliente-hash").startAudit({ brand: "a", website: "b", category: "c" });
     const sent = calls[0]?.init?.headers as Record<string, string>;
-    expect(sent["x-llmaudit-server-key"]).toBe("secreto");
-    expect(sent["x-llmaudit-client-id"]).toBe("cliente-hash");
+    expect(sent["x-askedthrice-server-key"]).toBe("secreto");
+    expect(sent["x-askedthrice-client-id"]).toBe("cliente-hash");
   });
 
   // Sin la variable no se manda nada: prod bucketea por IP como siempre y el
@@ -125,8 +125,8 @@ describe("headers que manda el cliente HTTP", () => {
     const calls = capture();
     await new HttpAuditClient("https://example.test", "cliente-hash").startAudit({ brand: "a", website: "b", category: "c" });
     const sent = calls[0]?.init?.headers as Record<string, string>;
-    expect(sent["x-llmaudit-server-key"]).toBeUndefined();
-    expect(sent["x-llmaudit-client-id"]).toBeUndefined();
+    expect(sent["x-askedthrice-server-key"]).toBeUndefined();
+    expect(sent["x-askedthrice-client-id"]).toBeUndefined();
   });
 });
 
@@ -163,7 +163,7 @@ describe("errores que lee el agente que llama", () => {
     });
     await expect(
       new HttpAuditClient("https://example.test", "c").startAudit({ brand: "a", website: "b", category: "c" }),
-    ).rejects.toThrow(/could not reach llmaudit/i);
+    ).rejects.toThrow(/could not reach askedthrice/i);
   });
 });
 

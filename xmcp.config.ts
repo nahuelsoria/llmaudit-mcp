@@ -19,7 +19,7 @@ const config: XmcpConfig = {
   // Lo que ve CUALQUIER cliente que se conecte. El default del scaffold decia
   // "xmcp server" y "bootstrapped with xmcp".
   template: {
-    name: "llmaudit",
+    name: "askedthrice",
     description:
       "Measure whether a brand actually shows up when buyers ask AI assistants for a recommendation. Free, no signup.",
     icons: [{ src: "./xmcp.svg" }],

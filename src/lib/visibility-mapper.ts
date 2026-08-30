@@ -58,7 +58,7 @@ export type VisibilityReadyResult = {
   sampleQuestions: Array<{ question: string; brandAppeared: boolean; namedInstead: string[] }>;
   incomplete: { is: boolean; reason: string };
   reportUrl: string;
-  upgrade: { fullReportUsd: 9; lifetimeUsd: 29.99; url: "https://llmaudit.app/pricing" };
+  upgrade: { fullReportUsd: 9; lifetimeUsd: 29.99; url: "https://askedthrice.com/pricing" };
 };
 
 const MAX_QUESTION_CHARS = 240;
@@ -201,7 +201,7 @@ export function mapVisibilityResult(audit: AuditResponse, map: FanoutMap, contex
     providersAnswered: providers.answered,
     sampleQuestions: samples(map, context),
     incomplete: incompleteState(map),
-    reportUrl: `https://llmaudit.app/reports/${encodeURIComponent(audit.id)}`,
-    upgrade: { fullReportUsd: 9, lifetimeUsd: 29.99, url: "https://llmaudit.app/pricing" },
+    reportUrl: `https://askedthrice.com/reports/${encodeURIComponent(audit.id)}`,
+    upgrade: { fullReportUsd: 9, lifetimeUsd: 29.99, url: "https://askedthrice.com/pricing" },
   };
 }

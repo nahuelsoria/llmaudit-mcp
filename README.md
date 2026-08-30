@@ -1,28 +1,28 @@
-# llmaudit-mcp
+# askedthrice-mcp
 
-MCP server for [llmaudit.app](https://llmaudit.app). Lets anyone's assistant measure whether a brand shows up when buyers ask an AI for a recommendation.
+MCP server for [askedthrice.com](https://askedthrice.com). Lets anyone's assistant measure whether a brand shows up when buyers ask an AI for a recommendation.
 
-Hosted at `https://mcp.llmaudit.app/mcp` (streamable HTTP). Listed in the [official MCP registry](https://registry.modelcontextprotocol.io) as `app.llmaudit/llmaudit`. The stdio bridge for clients that only launch local commands is the npm package [`llmaudit-mcp`](https://www.npmjs.com/package/llmaudit-mcp), in [`npm/`](npm/).
+Hosted at `https://mcp.askedthrice.com/mcp` (streamable HTTP). Listed in the [official MCP registry](https://registry.modelcontextprotocol.io) as `com.askedthrice/askedthrice`. The stdio bridge for clients that only launch local commands is the npm package [`askedthrice-mcp`](https://www.npmjs.com/package/askedthrice-mcp), in [`npm/`](npm/).
 
 Full spec: `specs/features/geo-13-mcp-server.md` in the private llm-rank-tracker repo.
 
 ## Install
 
 ```json
-{"mcpServers":{"llmaudit":{"url":"https://mcp.llmaudit.app/mcp"}}}
+{"mcpServers":{"askedthrice":{"url":"https://mcp.askedthrice.com/mcp"}}}
 ```
 
 or, for command-only clients:
 
 ```json
-{"mcpServers":{"llmaudit":{"command":"npx","args":["-y","llmaudit-mcp"]}}}
+{"mcpServers":{"askedthrice":{"command":"npx","args":["-y","askedthrice-mcp"]}}}
 ```
 
 ## What it exposes
 
 - `start_visibility_check` starts the measurement and returns a `runId`.
 - `get_visibility_check` collects it. Returns `running` until the providers answer.
-- `llmaudit://methodology` explains how it is measured.
+- `askedthrice://methodology` explains how it is measured.
 
 Two tools rather than one because a measurement takes up to two minutes: the audit is 15 to 60 s and the measured map another 15 to 60 s.
 
@@ -34,7 +34,7 @@ It never returns a 0 to 100 score: a verdict in three bands and counts.
 
 ## Money
 
-Every free measurement spends llmaudit's API keys, on the order of USD 0.05 to 0.15. Three guards, all covered by tests:
+Every free measurement spends askedthrice's API keys, on the order of USD 0.05 to 0.15. Three guards, all covered by tests:
 
 1. One free measurement per domain every 30 days, checked BEFORE the API is called.
 2. `MCP_MONTHLY_RUN_LIMIT` (default 200) as the channel ceiling, separate from the web funnel budget.
@@ -44,7 +44,7 @@ Every free measurement spends llmaudit's API keys, on the order of USD 0.05 to 0
 
 | Variable | Purpose |
 | --- | --- |
-| `LLMAUDIT_API_BASE_URL` | API base. Default `https://llmaudit.app` |
+| `LLMAUDIT_API_BASE_URL` | API base. Default `https://askedthrice.com` |
 | `MCP_SERVER_KEY` | Key shared with llm-rank-tracker. Without it prod buckets by IP |
 | `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` | `mcp_runs` table. Without them the store is in memory and does NOT work on serverless |
 | `MCP_MONTHLY_RUN_LIMIT` | Monthly ceiling of runs for the channel |
@@ -80,11 +80,11 @@ Tests run against real fixtures in `fixtures/` (already-paid runs from prospecti
 
 ## Publishing a new registry version
 
-`server.json` is published with `mcp-publisher` using DNS auth on `llmaudit.app`. The key lives outside the repo as a PEM; the CLI wants the raw ed25519 seed in hex:
+`server.json` is published with `mcp-publisher` using DNS auth on `askedthrice.com`. The key lives outside the repo as a PEM; the CLI wants the raw ed25519 seed in hex:
 
 ```sh
 HEX=$(openssl pkey -in <key.pem> -noout -text | sed -n '/^priv:/,/^pub:/p' | grep -v '^priv:\|^pub:' | tr -d ' :\n')
-mcp-publisher login dns --domain llmaudit.app --private-key "$HEX"
+mcp-publisher login dns --domain askedthrice.com --private-key "$HEX"
 mcp-publisher publish server.json
 ```
 

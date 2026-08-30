@@ -10,6 +10,9 @@ import { mapVisibilityResult, type AuditResponse, type FanoutMap } from "../src/
 // capturar midiendo. Se fuerzan a error todas las celdas de anthropic.
 const cases = {
   picaday: { brand: "Picaday", website: "picaday.com.ar" },
+  // Fixture historico: esta corrida se midio sobre llmaudit.app antes del
+  // renombre del 30/08/2026, asi que conserva la marca y el dominio de
+  // entonces. Cambiarlos seria falsear la evidencia que el fixture guarda.
   llmaudit: { brand: "LLM Audit", website: "llmaudit.app" },
   "proveedor-caido": { brand: "Picaday", website: "picaday.com.ar" },
 } as const;

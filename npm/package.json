@@ -1,12 +1,12 @@
 {
-  "name": "llmaudit-mcp",
+  "name": "askedthrice-mcp",
   "version": "0.1.0",
-  "description": "MCP server for llmaudit.app: measure whether AI assistants actually recommend a brand. stdio bridge to the hosted server, for clients that launch local commands.",
-  "mcpName": "app.llmaudit/llmaudit",
+  "description": "MCP server for askedthrice.com: measure whether AI assistants actually recommend a brand. stdio bridge to the hosted server, for clients that launch local commands.",
+  "mcpName": "com.askedthrice/askedthrice",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "llmaudit-mcp": "bin/llmaudit-mcp.js"
+    "askedthrice-mcp": "bin/askedthrice-mcp.js"
   },
   "files": [
     "bin",
@@ -31,7 +31,7 @@
     "chatgpt",
     "claude"
   ],
-  "homepage": "https://llmaudit.app/developers",
+  "homepage": "https://askedthrice.com/developers",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nahuelsoria/llmaudit-mcp.git",

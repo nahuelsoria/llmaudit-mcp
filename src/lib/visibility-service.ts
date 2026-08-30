@@ -172,7 +172,7 @@ export class VisibilityService {
       return {
         status: "not_measurable",
         domain,
-        message: `llmaudit could not read enough of ${domain} to build the buyer questions, so there is nothing to measure. This usually means the site blocks crawlers or returns an error to them. No free measurement was used up.`,
+        message: `askedthrice could not read enough of ${domain} to build the buyer questions, so there is nothing to measure. This usually means the site blocks crawlers or returns an error to them. No free measurement was used up.`,
       };
     }
 
@@ -220,7 +220,7 @@ function hasBuyerQuestions(audit: AuditResponse): boolean {
   return Array.isArray(fanout?.questions) && fanout.questions.length > 0;
 }
 
-const UPGRADE = { fullReportUsd: 9, lifetimeUsd: 29.99, url: "https://llmaudit.app/pricing" };
+const UPGRADE = { fullReportUsd: 9, lifetimeUsd: 29.99, url: "https://askedthrice.com/pricing" };
 
 export function createVisibilityService(clientId: string): VisibilityService {
   return new VisibilityService(new HttpAuditClient(undefined, clientId), { clientId });

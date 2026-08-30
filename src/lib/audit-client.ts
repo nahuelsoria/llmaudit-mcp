@@ -22,18 +22,18 @@ const REQUEST_TIMEOUT_MS = 90_000;
 // Lo que sale por aca lo lee un agente que tiene que decidir si reintentar o
 // rendirse, asi que un "HTTP 429" pelado no alcanza.
 function errorFor(status: number): string {
-  if (status === 429) return "llmaudit is rate limiting this client. Wait a few minutes before measuring again.";
-  if (status === 404) return "That measurement does not exist on llmaudit.";
-  if (status === 503) return "llmaudit is not accepting free measurements right now. Try again later.";
-  if (status >= 500) return "llmaudit had an internal error. Try again in a minute.";
-  return `llmaudit rejected the request (HTTP ${status}).`;
+  if (status === 429) return "askedthrice is rate limiting this client. Wait a few minutes before measuring again.";
+  if (status === 404) return "That measurement does not exist on askedthrice.";
+  if (status === 503) return "askedthrice is not accepting free measurements right now. Try again later.";
+  if (status >= 500) return "askedthrice had an internal error. Try again in a minute.";
+  return `askedthrice rejected the request (HTTP ${status}).`;
 }
 
 export class HttpAuditClient implements AuditClient {
   private readonly baseUrl: string;
   private readonly clientId: string;
 
-  constructor(baseUrl = process.env.LLMAUDIT_API_BASE_URL ?? "https://llmaudit.app", clientId = "anon") {
+  constructor(baseUrl = process.env.LLMAUDIT_API_BASE_URL ?? "https://askedthrice.com", clientId = "anon") {
     this.baseUrl = baseUrl.replace(/\/$/, "");
     this.clientId = clientId;
   }
@@ -44,7 +44,7 @@ export class HttpAuditClient implements AuditClient {
   private callerHeaders(): Record<string, string> {
     const key = process.env.MCP_SERVER_KEY?.trim();
     if (!key) return {};
-    return { "x-llmaudit-server-key": key, "x-llmaudit-client-id": this.clientId };
+    return { "x-askedthrice-server-key": key, "x-askedthrice-client-id": this.clientId };
   }
 
   async startAudit(payload: Record<string, unknown>): Promise<AuditResponse> {
@@ -84,9 +84,9 @@ export class HttpAuditClient implements AuditClient {
       response = await fetch(`${this.baseUrl}${path}`, { ...init, signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS) });
     } catch (error) {
       if (error instanceof Error && error.name === "TimeoutError") {
-        throw new Error("llmaudit took too long to answer. Try again in a minute.");
+        throw new Error("askedthrice took too long to answer. Try again in a minute.");
       }
-      throw new Error("Could not reach llmaudit. Try again in a minute.");
+      throw new Error("Could not reach askedthrice. Try again in a minute.");
     }
 
     if (!response.ok) {

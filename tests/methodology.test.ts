@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import methodology, { metadata } from "../src/resources/(llmaudit)/methodology";
+import methodology, { metadata } from "../src/resources/(askedthrice)/methodology";
 
-describe("llmaudit://methodology", () => {
+describe("askedthrice://methodology", () => {
   it("explica proveedores, preguntas abiertas, mapa medido y las tres bandas en texto plano", () => {
     const text = methodology();
     expect(metadata.mimeType).toBe("text/plain");
