@@ -23,6 +23,7 @@ const REQUEST_TIMEOUT_MS = 90_000;
 // rendirse, asi que un "HTTP 429" pelado no alcanza.
 function errorFor(status: number): string {
   if (status === 429) return "askedthrice is rate limiting this client. Wait a few minutes before measuring again.";
+  if (status === 410) return "askedthrice no longer runs free measurements. Scan your site at https://askedthrice.com.";
   if (status === 404) return "That measurement does not exist on askedthrice.";
   if (status === 503) return "askedthrice is not accepting free measurements right now. Try again later.";
   if (status >= 500) return "askedthrice had an internal error. Try again in a minute.";

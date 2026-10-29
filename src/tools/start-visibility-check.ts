@@ -1,8 +1,5 @@
 import { z } from "zod";
 import { type InferSchema, type ToolMetadata } from "xmcp";
-import { headers } from "xmcp/headers";
-import { clientIdFromHeaders } from "../lib/client-identity";
-import { createVisibilityService } from "../lib/visibility-service";
 
 export const schema = {
   brand: z.string().min(2).max(80).describe("Brand name as customers write it"),
@@ -16,7 +13,7 @@ export const schema = {
 export const metadata: ToolMetadata = {
   name: "start_visibility_check",
   description:
-    "Measure whether a brand shows up when buyers ask AI assistants for a recommendation. Asks real buyer questions to OpenAI, Anthropic and Gemini and reports what they answered, not what they claim they would answer. Free, no signup, one measurement per domain every 30 days. Returns a runId: call get_visibility_check with it after about a minute. If the domain was already measured this month the response says quota_reached and includes when it ran.",
+    "Closed: Asked Thrice no longer runs free measurements. Calling it returns status closed and the link to the paid scan at askedthrice.com, which needs an account. Measurements started before the change can still be read with get_visibility_check.",
   annotations: {
     title: "Start visibility check",
     readOnlyHint: false,
@@ -26,6 +23,16 @@ export const metadata: ToolMetadata = {
   },
 };
 
-export default async function startVisibilityCheck(input: InferSchema<typeof schema>) {
-  return JSON.stringify(await createVisibilityService(clientIdFromHeaders(headers())).start(input));
+// Cerrado el 29/10/2026: en Asked Thrice ya no hay nada gratis y el escaneo se
+// cobra con cuenta, que un cliente MCP anónimo no tiene. No se llama a la API:
+// el agente recibe el motivo y el link, no un error HTTP genérico.
+export const CLOSED_RESULT = {
+  status: "closed",
+  message:
+    "Asked Thrice no longer runs free measurements. The paid scan reads your site, asks your customers' questions to ChatGPT, Gemini and Claude with web search on, and shows who they recommend instead. Run it at https://askedthrice.com.",
+  url: "https://askedthrice.com",
+} as const;
+
+export default async function startVisibilityCheck(_input: InferSchema<typeof schema>) {
+  return JSON.stringify(CLOSED_RESULT);
 }

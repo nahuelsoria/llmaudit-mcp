@@ -2,6 +2,8 @@
 
 MCP server for [askedthrice.com](https://askedthrice.com). Lets anyone's assistant measure whether a brand shows up when buyers ask an AI for a recommendation.
 
+> **Closed since 2026-10-29.** Asked Thrice no longer runs free measurements; the product is a paid scan that needs an account. `start_visibility_check` returns `status: "closed"` with the link to askedthrice.com and does not call the API. `get_visibility_check` still reads measurements started before that date. The sections below describe how it worked while it was open.
+
 Hosted at `https://mcp.askedthrice.com/mcp` (streamable HTTP). Listed in the [official MCP registry](https://registry.modelcontextprotocol.io) as `com.askedthrice/askedthrice`. The stdio bridge for clients that only launch local commands is the npm package [`askedthrice-mcp`](https://www.npmjs.com/package/askedthrice-mcp), in [`npm/`](npm/).
 
 Full spec: `specs/features/geo-13-mcp-server.md` in the private llm-rank-tracker repo.
