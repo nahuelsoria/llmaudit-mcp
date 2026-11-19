@@ -17,11 +17,13 @@ const config: XmcpConfig = {
     resources: "./src/resources",
   },
   // Lo que ve CUALQUIER cliente que se conecte. El default del scaffold decia
-  // "xmcp server" y "bootstrapped with xmcp".
+  // "xmcp server" y "bootstrapped with xmcp". Desde el cierre del 29/10/2026 no
+  // promete nada gratis: dice lo mismo que la descripcion de
+  // start_visibility_check.
   template: {
     name: "askedthrice",
     description:
-      "Measure whether a brand actually shows up when buyers ask AI assistants for a recommendation. Free, no signup.",
+      "Closed since 2026-10-29: Asked Thrice no longer runs free measurements. get_visibility_check still reads runs started before then. The paid scan is at https://askedthrice.com and needs an account.",
     icons: [{ src: "./xmcp.svg" }],
   }
 };
